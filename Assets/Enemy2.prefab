@@ -423,7 +423,7 @@ MonoBehaviour:
   DamageTMP: {fileID: 802500032049000903}
   SpriteRenderer: {fileID: 523784295448073332}
   DefaultColor: {r: 0, g: 0, b: 0, a: 0}
-  XP: 0
+  XP: 20
 --- !u!114 &8119546620617839228
 MonoBehaviour:
   m_ObjectHideFlags: 0

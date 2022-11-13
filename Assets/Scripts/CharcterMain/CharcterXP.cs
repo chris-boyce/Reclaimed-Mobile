@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharcterXP : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CharcterXP : MonoBehaviour
     private float CONSTANTXPAMOUNT = 100f;
     private int CurrentLevel = 1;
 
+    public Image XpBar;
 
     private void Start()
     {
@@ -26,6 +28,8 @@ public class CharcterXP : MonoBehaviour
         {
             LevelUp();
         }
+        Debug.Log(TotalXP / XPTillNextLevel);
+        XpBar.fillAmount = (TotalXP / XPTillNextLevel);
     }
 
     void LevelUp()

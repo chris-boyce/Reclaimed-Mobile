@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,18 +22,13 @@ public class Wavespawner : MonoBehaviour
     public Transform[] SpawnPostion;
     int SpawnLocationNumber;
     int i = 0;
-    bool FinishedSpawning = false;
+    public bool FinishedSpawning = false;
     public List<Spawner> Level1 = new List<Spawner>();
 
     public CharcterXP PlayerXP;
 
     private UnityAction<float> DeathXP;
 
-
-    void Start()
-    {
-        
-    }
     private void Update()
     {
         if (!FinishedSpawning)
@@ -65,6 +61,12 @@ public class Wavespawner : MonoBehaviour
                 {
                     Level1[i].Finished = true;
                     i++;
+                    if(i > Level1.Count)
+                    {
+                        Debug.Log("Done");
+                        FinishedSpawning = true;
+                        this.gameObject.AddComponent<EndRound>();
+                    }
                 }
 
                 if (Level1.Count <= i)
