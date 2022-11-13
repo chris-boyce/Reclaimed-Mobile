@@ -61,5 +61,14 @@ public class CharcterFiringScript : MonoBehaviour
             }
         }
 
+
+    }
+    public void UpgradeFirerate()
+    {
+        m_defaultGun.UpgradeFirerate();
+        m_minigun.UpgradeFirerate();
+        m_sniper.UpgradeFirerate();
+        m_shotgun.UpgradeFirerate();
+        m_circular.UpgradeFirerate();
     }
 }

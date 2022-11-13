@@ -33,6 +33,11 @@ public class GunClass : MonoBehaviour
     {
 
     }
+    public virtual void UpgradeFirerate()
+    {
+        float TempRate = (Firerate / 100) * 10;
+        Firerate = Firerate - TempRate;
+    }
 }
 
 

@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UpgradePlayer : MonoBehaviour
+{
+    public CharcterMovement PlayersMovement;
+    public CharcterHealth PlayersHealth;
+    public CharcterFiringScript PlayersFiringScript;
+    public CircleCollider2D PlayersRangeCircle;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "UpgradeBox")
+        {
+            collision.gameObject.GetComponent<UpgradeBox>().ToggleUI();
+            Time.timeScale = 0.0f;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Time.timeScale = 1.0f;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+    }
+
+    public void UpgradeRange()
+    {
+        PlayersRangeCircle.radius = PlayersRangeCircle.radius + 0.1f;
+    }
+    public void UpgradeFirerate()
+    {
+        PlayersFiringScript.UpgradeFirerate();
+    }
+    public void UpgradeMovementSpeed()
+    {
+        PlayersMovement.MovementSpeed = PlayersMovement.MovementSpeed + 0.5f;
+    }
+
+
+}

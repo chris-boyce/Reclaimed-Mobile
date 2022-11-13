@@ -48,13 +48,15 @@ public class Wavespawner : MonoBehaviour
             }
             else if (Level1[i].Enemy2Amount > 0)
             {
-                Instantiate(TypesOfEnemies[1], SpawnPostion[SpawnLocationNumber].position, Quaternion.identity);
+                GameObject temp = Instantiate(TypesOfEnemies[1], SpawnPostion[SpawnLocationNumber].position, Quaternion.identity);
                 Level1[i].Enemy2Amount--;
+                temp.gameObject.GetComponent<EnemyHealth>().GiveXP += PlayerXP.OnGiveXP; //Subs to the GiveXP event in the enmies health and links it to the XP Controllers
             }
             else if (Level1[i].Enemy3Amount > 0)
             {
-                Instantiate(TypesOfEnemies[2], SpawnPostion[SpawnLocationNumber].position, Quaternion.identity);
+                GameObject temp = Instantiate(TypesOfEnemies[2], SpawnPostion[SpawnLocationNumber].position, Quaternion.identity);
                 Level1[i].Enemy3Amount--;
+                temp.gameObject.GetComponent<EnemyHealth>().GiveXP += PlayerXP.OnGiveXP; //Subs to the GiveXP event in the enmies health and links it to the XP Controllers
             }
             else
             {
