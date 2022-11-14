@@ -18,8 +18,6 @@ public class UpgradeBox : MonoBehaviour
     public TextMeshProUGUI CardHeading2;
     public TextMeshProUGUI CardDescription2;
 
-
-
     private void Start()
     {
         AllCards = Resources.LoadAll<UpgradeCard>("UpgradeCards");

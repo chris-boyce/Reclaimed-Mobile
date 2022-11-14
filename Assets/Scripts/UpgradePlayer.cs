@@ -9,10 +9,6 @@ public class UpgradePlayer : MonoBehaviour
     public CharcterFiringScript PlayersFiringScript;
     public CircleCollider2D PlayersRangeCircle;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "UpgradeBox")
@@ -24,10 +20,6 @@ public class UpgradePlayer : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         Time.timeScale = 1.0f;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
     }
 
     public void UpgradeRange()

@@ -29,7 +29,7 @@ public class CharcterFiringScript : MonoBehaviour
     private void Start()
     {
         BI = GetComponent<BulletInstanitate>();
-        Primary = WeaponTypes.Minigun;
+        Primary = WeaponTypes.Null;
         Secondary = WeaponTypes.Null;
         //TODO SAVE THIS AND LOAD FROM THE SAVE
     }

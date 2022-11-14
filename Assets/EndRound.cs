@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndRound : MonoBehaviour
 {
+    private GameObject[] EnemiesAlive;
+    private LoadScene LoadScene;
+
+    private bool GameEnded = false;
     private void Start()
     {
-        InvokeRepeating("CheckEnemies", 1.0f, 10f);
+        LoadScene = GetComponent<LoadScene>();  
+        InvokeRepeating("CheckEnemies", 1.0f, 5f);
     }
     void CheckEnemies()
     {
-        Debug.Log("Running");
+        EnemiesAlive = GameObject.FindGameObjectsWithTag("Enemy");
+        if (EnemiesAlive.Length == 0 && GameEnded == false)
+        {
+            LoadScene.OnSceneLoadAdditive();
+            GameEnded = true;
+        }
     }
 
 
