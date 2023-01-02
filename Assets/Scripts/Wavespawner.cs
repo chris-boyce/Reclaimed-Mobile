@@ -31,7 +31,7 @@ public class Wavespawner : MonoBehaviour
 
     private void Update()
     {
-        if (!FinishedSpawning)
+        if (!FinishedSpawning)//To Control the end of Level / wave
         {
             SpawnLocationNumber =  UnityEngine.Random.Range(0, SpawnPostion.Length);
 
@@ -56,7 +56,7 @@ public class Wavespawner : MonoBehaviour
             }
             else
             {
-                Level1[i].SpawnTime -= Time.deltaTime;
+                Level1[i].SpawnTime -= Time.deltaTime; 
                 if (Level1[i].SpawnTime <= 0)
                 {
                     Level1[i].Finished = true;
@@ -65,11 +65,11 @@ public class Wavespawner : MonoBehaviour
                     {
                         Debug.Log("Done");
                         FinishedSpawning = true;
-                        this.gameObject.AddComponent<EndRound>();
+                        this.gameObject.AddComponent<EndRound>(); // Starts the end wave checks
                     }
                 }
 
-                if (Level1.Count <= i)
+                if (Level1.Count <= i) //System to go to next wave after all have spawned
                 {
                     FinishedSpawning = true;
                 }

@@ -9,13 +9,13 @@ public class AutoAimer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy") //Enters enemy into the list to attack
         {
             EnemyCollisonsList.Add(collision.gameObject);
 
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision) // Vice Versa 
     {
         for (int i = 0; i < EnemyCollisonsList.Count; i++)
         {
@@ -26,7 +26,7 @@ public class AutoAimer : MonoBehaviour
             }
         }
     }
-    private void Update()
+    private void Update() // Enable the shooting function
     {
         if(EnemyCollisonsList.Count > 0)
         {

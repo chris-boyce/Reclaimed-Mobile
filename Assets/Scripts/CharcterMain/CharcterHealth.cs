@@ -31,7 +31,7 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
     {
         health -= DamageTaken;
         Debug.Log("Player Hit");
-        HealthBar.UpdateHealthbar(DamageTaken);
+        HealthBar.UpdateHealthbar(DamageTaken);//UI for Health
         //Screen Shake 
         //Flash Red
         //Audio

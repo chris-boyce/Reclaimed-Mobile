@@ -28,7 +28,7 @@ public class TouchInput : MonoBehaviour
 
     void Update()
     {
-        if (ToggleMovementSystem)
+        if (ToggleMovementSystem)//Checks for toggle 
             return;
  
 

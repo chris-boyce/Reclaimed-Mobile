@@ -39,6 +39,6 @@ public class CharcterXP : MonoBehaviour
         XPTillNextLevel = (CurrentLevel/2) * CONSTANTXPAMOUNT;
         Debug.Log("XP Till next Level = " + XPTillNextLevel);
         TotalXP = 0;
-        //TODO Add bloody Overclock / Upgrade System
+        //TODO Add  Overclock / Upgrade System
     }
 }

@@ -8,7 +8,7 @@ public enum WeaponTypes {Rifle, Minigun ,Shotgun ,RocketLauncher, Circular, Turr
 
 public class CharcterFiringScript : MonoBehaviour
 {
-
+    //Get all classes
     [Header("Gun Classes")]
     public DefaultGunClass m_defaultGun;
     public MinigunGunClass m_minigun;
@@ -36,7 +36,8 @@ public class CharcterFiringScript : MonoBehaviour
 
     void Update()
     {
-        if (AutoAimer.CanShoot == true && AutoAimer.EnemyCollisonsList.Count > 0)
+        //Checks for gun equips
+        if (AutoAimer.CanShoot == true && AutoAimer.EnemyCollisonsList.Count > 0) //Stops running Update for effiencty
         {
             transform.right = AutoAimer.EnemyCollisonsList[0].gameObject.transform.position - transform.position;
             if (Primary == WeaponTypes.Rifle || Secondary == WeaponTypes.Rifle)
@@ -63,7 +64,7 @@ public class CharcterFiringScript : MonoBehaviour
 
 
     }
-    public void UpgradeFirerate()
+    public void UpgradeFirerate() //To access guns class when upgrades
     {
         m_defaultGun.UpgradeFirerate();
         m_minigun.UpgradeFirerate();

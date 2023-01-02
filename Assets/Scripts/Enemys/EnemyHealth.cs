@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
         GiveXP.Invoke(XP); //System Event that is called when dies and links to the CharcterXP and gives the XP (Linked in the WaveSpawner)
     }
 
-    IEnumerator Flash()
+    IEnumerator Flash() //Damage flash
     {
         if (SpriteRenderer == null)
             yield return null;
@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
         SpriteRenderer.color = DefaultColor;
     }
 
-    IEnumerator DamageText(float DamageTaken)
+    IEnumerator DamageText(float DamageTaken) //Damage Text
     {
         if (DamageTMP == null)
             yield return null;
@@ -59,7 +59,7 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
         yield return new WaitForSeconds(.1f);
         DamageTMP.text = " ";
     }
-    private void OnDisable()
+    private void OnDisable()//Defencive coding was giving errors when destoied
     {
         StopAllCoroutines();
     }

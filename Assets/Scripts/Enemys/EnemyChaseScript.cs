@@ -22,10 +22,11 @@ public class EnemyChaseScript : MonoBehaviour
 
     void Start()
     {
+        //Sets up the A* Pathfinding
         Seeker = GetComponent<Seeker>();
         RB = GetComponent<Rigidbody2D>();
         Target = GameObject.FindWithTag("Player").gameObject.transform;
-        InvokeRepeating("UpdatePath", 1f, 0.5f);
+        InvokeRepeating("UpdatePath", 1f, 0.5f); // Updates every 1 sec
         EnemyAim = GetComponent<EnemyAim>();
 
     }
@@ -33,14 +34,14 @@ public class EnemyChaseScript : MonoBehaviour
     {
         if(Seeker.IsDone())
         {
-            Seeker.StartPath(RB.position, Target.position, OnPathComplete);
+            Seeker.StartPath(RB.position, Target.position, OnPathComplete); //Path Updater
         }
         
     }
 
     void OnPathComplete(Path P)
     {
-        if(!P.error)
+        if(!P.error) //When path is done dont move
         {
             CurrentPath = P;
             CurrentWaypoint = 0;
@@ -49,7 +50,7 @@ public class EnemyChaseScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (CurrentPath == null)
+        if (CurrentPath == null)//Path Checking
             return;
         if (CurrentWaypoint >= CurrentPath.vectorPath.Count)
         {
@@ -60,7 +61,7 @@ public class EnemyChaseScript : MonoBehaviour
         {
             ReachEndOfPath = false;
         }
-        Vector2 Direction = ((Vector2)CurrentPath.vectorPath[CurrentWaypoint] - RB.position).normalized;
+        Vector2 Direction = ((Vector2)CurrentPath.vectorPath[CurrentWaypoint] - RB.position).normalized; //Movement along path
         Vector2 Force = Direction * Speed * Time.deltaTime;
         RB.AddForce(Force);
         float Distence = Vector2.Distance(RB.position, CurrentPath.vectorPath[CurrentWaypoint]);
@@ -69,9 +70,10 @@ public class EnemyChaseScript : MonoBehaviour
             CurrentWaypoint++;
         }
         float DistenceFromTarget = Vector2.Distance(RB.position, Target.position);
+        //In range of player
         if (DistenceFromTarget < EnemyRange)
         {
-            Seeker.StartPath(RB.position, RB.position, OnPathComplete);
+            Seeker.StartPath(RB.position, RB.position, OnPathComplete);//Stop moving and shoot
             EnemyAim.AimAtPlayerLocation(Target);
             //CanAttack
         }

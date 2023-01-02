@@ -17,9 +17,9 @@ public class EndRound : MonoBehaviour
     void CheckEnemies()
     {
         EnemiesAlive = GameObject.FindGameObjectsWithTag("Enemy");
-        if (EnemiesAlive.Length == 0 && GameEnded == false)
+        if (EnemiesAlive.Length == 0 && GameEnded == false)//Checks for enemies alive 
         {
-            LoadScene.OnSceneLoadAdditive();
+            LoadScene.OnSceneLoadAdditive();//Loads new scene
             GameEnded = true;
         }
     }

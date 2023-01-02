@@ -15,5 +15,5 @@ MonoBehaviour:
   UpgradeName: Movement Speed Upgrade
   UpgradeDescription: Will increase Movement Speed
   UpgradeCat: 3
-  PercentageChange: 0
+  PercentageChange: 10
   UpgradeArt: {fileID: 21300000, guid: 563e4d2d28c2241fbbb33e85f9b27efb, type: 3}

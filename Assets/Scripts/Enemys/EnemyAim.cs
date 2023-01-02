@@ -18,11 +18,11 @@ public class EnemyAim : MonoBehaviour
     }
     public void AimAtPlayerLocation(Transform PlayerPos)
     {
-        transform.right = PlayerPos.position - transform.position;
+        transform.right = PlayerPos.position - transform.position; // Looks at player code 
         Timer = Timer + Time.deltaTime;
         if(Timer >= Firerate)
         {
-            EnemyBI.Shoot(Projectile, Damage, Range, BulletVelo, false);
+            EnemyBI.Shoot(Projectile, Damage, Range, BulletVelo, false); //Give values to shoot
             Timer = 0f;
         }
 
