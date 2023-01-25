@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum WeaponTypes {Rifle, Minigun ,Shotgun ,RocketLauncher, Circular, Turret, Sniper , Landmine , Null  };
 
@@ -10,66 +11,65 @@ public class CharcterFiringScript : MonoBehaviour
 {
     //Get all classes
     [Header("Gun Classes")]
-    public DefaultGunClass m_defaultGun;
-    public MinigunGunClass m_minigun;
-    public SniperGunClass m_sniper;
-    public ShotgunGunClass m_shotgun;
-    public CircularGunClass m_circular;
-
-    [Header("Players Equipped Weapons")]
-    public WeaponTypes Primary;
-    public WeaponTypes Secondary;
-
-    [Header("Referenced Scripts")]
+    public List<GunCard> GunList = new List<GunCard>() {null, null};
     private BulletInstanitate BI;
-    public AutoAimer AutoAimer;
+    private AutoAimer AutoAimer;
 
-
+    public Image[] WeaponIcons;
 
     private void Start()
     {
         BI = GetComponent<BulletInstanitate>();
-        Primary = WeaponTypes.Null;
-        Secondary = WeaponTypes.Null;
-        //TODO SAVE THIS AND LOAD FROM THE SAVE
+        AutoAimer = GetComponent<AutoAimer>();
+        SetBullet();
+        SetIcon();
+    }
+    public void SetIcon()
+    {
+        WeaponIcons[0].sprite = GunList[0].Icon;
+        WeaponIcons[1].sprite = GunList[1].Icon;
+
+    }
+    public void SetBullet()
+    {
+        foreach (var Guns in GunList)
+        {
+            Guns.BI = BI;
+        }
     }
 
     void Update()
     {
         //Checks for gun equips
-        if (AutoAimer.CanShoot == true && AutoAimer.EnemyCollisonsList.Count > 0) //Stops running Update for effiencty
+        if (AutoAimer.CanShoot != true || AutoAimer.EnemyCollisonsList.Count <= 0) return; //Stops running Update for Efficenty 
+        transform.right = AutoAimer.EnemyCollisonsList[0].gameObject.transform.position - transform.position;
+        for (int i = 0; i < GunList.Count; i++)
         {
-            transform.right = AutoAimer.EnemyCollisonsList[0].gameObject.transform.position - transform.position;
-            if (Primary == WeaponTypes.Rifle || Secondary == WeaponTypes.Rifle)
+            switch (GunList[i].WeaponType)
             {
-                m_defaultGun.Shoot();
-            }
-            if (Primary == WeaponTypes.Minigun || Secondary == WeaponTypes.Minigun)
-            {
-                m_minigun.Shoot();
-            }
-            if (Primary == WeaponTypes.Sniper || Secondary == WeaponTypes.Sniper)
-            {
-                m_sniper.Shoot();
-            }
-            if (Primary == WeaponTypes.Shotgun || Secondary == WeaponTypes.Shotgun)
-            {
-                m_shotgun.Shoot();
-            }
-            if (Primary == WeaponTypes.Circular || Secondary == WeaponTypes.Circular)
-            {
-                m_circular.Shoot();
+                case WeaponTypes.Rifle:
+                    GunList[i].Shoot();
+                    break;
+                case WeaponTypes.Minigun:
+                    GunList[i].Shoot();
+                    break;
+                case WeaponTypes.Sniper:
+                    GunList[i].Shoot();
+                    break;
+                case WeaponTypes.Circular:
+                    GunList[i].Shoot();
+                    break;
+                case WeaponTypes.Shotgun:
+                    GunList[i].Shoot();
+                    break;
             }
         }
-
-
     }
-    public void UpgradeFirerate() //To access guns class when upgrades
+
+    public void UpgradeWeapon()
     {
-        m_defaultGun.UpgradeFirerate();
-        m_minigun.UpgradeFirerate();
-        m_sniper.UpgradeFirerate();
-        m_shotgun.UpgradeFirerate();
-        m_circular.UpgradeFirerate();
+        GunList[0].UpgradeWeapon();
+        GunList[1].UpgradeWeapon();
     }
+
 }

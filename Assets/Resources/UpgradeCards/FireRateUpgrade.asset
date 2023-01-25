@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96a0bafc3196ce40aa4e0a81f6fc060, type: 3}
   m_Name: FireRateUpgrade
   m_EditorClassIdentifier: 
-  UpgradeName: Firerate Upgrade
-  UpgradeDescription: Will Increase the Fire Rate of Weapons
-  UpgradeCat: 4
+  UpgradeName: Upgrade Weapon
+  UpgradeDescription: Will Increase the Weapons Level
+  UpgradeCat: 3
   PercentageChange: 5
   UpgradeArt: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}

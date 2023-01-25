@@ -21,7 +21,7 @@ public class ShotgunGunClass : GunClass
         if (Timer > Firerate)
         {
             Debug.Log("Class Shooting");
-            BI.ShootShotgun(Bullet, Damage, Range, BulletVelocity, Penetration, AmountofPellets, SpreadAngleMax);
+            
             Timer = 0f;
         }
     }

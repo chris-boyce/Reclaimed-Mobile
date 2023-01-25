@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum GunRarity
+{
+    Bronze = 0,Silver = 1,Gold = 2, Platinum = 3,Diamond = 4
+}
 
 public class GunClass : MonoBehaviour 
 {
     public float Firerate;
+    public int Level = 0;
+    public GunRarity Rarity;
     public float Damage;
     public float BulletVelocity;
     public float Range;
@@ -38,6 +44,12 @@ public class GunClass : MonoBehaviour
         float TempRate = (Firerate / 100) * 10;
         Firerate = Firerate - TempRate;
     }
+
+    public virtual void UpgradeWeaponLevel()
+    {
+
+    }
+
 }
 
 

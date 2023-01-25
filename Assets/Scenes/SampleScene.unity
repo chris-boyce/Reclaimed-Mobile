@@ -642,10 +642,10 @@ GameObject:
   - component: {fileID: 242822019}
   - component: {fileID: 242822020}
   - component: {fileID: 242822021}
-  - component: {fileID: 242822022}
   - component: {fileID: 242822023}
   - component: {fileID: 242822024}
   - component: {fileID: 242822025}
+  - component: {fileID: 242822026}
   m_Layer: 0
   m_Name: CharcterAimer
   m_TagString: Untagged
@@ -711,13 +711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5859e27776916d640ba1ae2b6c232933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_defaultGun: {fileID: 242822021}
-  m_minigun: {fileID: 242822022}
-  m_sniper: {fileID: 242822023}
-  m_shotgun: {fileID: 242822024}
-  m_circular: {fileID: 242822025}
-  Primary: 0
-  Secondary: 8
+  GunList:
+  - {fileID: 11400000, guid: 9c885b741d9b51d4d8e44a1fadffb1f9, type: 2}
+  - {fileID: 11400000, guid: 9600717b81f6d064b82514edf4a50d26, type: 2}
   AutoAimer: {fileID: 242822018}
 --- !u!114 &242822020
 MonoBehaviour:
@@ -738,35 +734,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242822015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 178aac666d0d06c4eb8d96d3dd5f08cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Firerate: 0.2
+  Level: 0
+  Rarity: 0
   Damage: 10
   BulletVelocity: 5
   Range: 10
-  Penetration: 0
-  Timer: 0
-  Bullet: {fileID: 0}
-  BI: {fileID: 0}
---- !u!114 &242822022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242822015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ebbdcb843fe74847b958d1939b8bbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Firerate: 0.1
-  Damage: 5
-  BulletVelocity: 7
-  Range: 5
   Penetration: 0
   Timer: 0
   Bullet: {fileID: 0}
@@ -778,12 +756,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242822015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ff04b636dc3a1249b22ae4acfb09242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Firerate: 0.5
+  Level: 0
+  Rarity: 0
   Damage: 25
   BulletVelocity: 10
   Range: 20
@@ -798,12 +778,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242822015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8a6fcfeda1864643a6c0c47c5043676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Firerate: 0.5
+  Level: 0
+  Rarity: 0
   Damage: 2
   BulletVelocity: 5
   Range: 5
@@ -820,12 +802,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242822015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd795d15df3374c449f3e180b4e4c24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Firerate: 0.75
+  Level: 0
+  Rarity: 0
   Damage: 10
   BulletVelocity: 5
   Range: 3
@@ -834,6 +818,28 @@ MonoBehaviour:
   Bullet: {fileID: 0}
   BI: {fileID: 0}
   AmountofPellets: 10
+--- !u!114 &242822026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242822015}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ebbdcb843fe74847b958d1939b8bbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Firerate: 0.1
+  Level: 0
+  Rarity: 0
+  Damage: 5
+  BulletVelocity: 7
+  Range: 5
+  Penetration: 0
+  Timer: 0
+  Bullet: {fileID: 0}
+  BI: {fileID: 0}
 --- !u!1 &246402159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091811c731ed6864a937a1b64be173f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnlockedWeapon: 0
+  AllGuns: []
+  UnlockedGun: {fileID: 0}
   WeaponUpgrades: {fileID: 1881246722}
   CharcterFiringScript: {fileID: 242822019}
   UI: {fileID: 1293701279}
@@ -4275,7 +4282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091811c731ed6864a937a1b64be173f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnlockedWeapon: 0
+  AllGuns: []
+  UnlockedGun: {fileID: 0}
   WeaponUpgrades: {fileID: 1881246722}
   CharcterFiringScript: {fileID: 242822019}
   UI: {fileID: 246402159}
@@ -5174,7 +5182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1130917267
 RectTransform:
   m_ObjectHideFlags: 0

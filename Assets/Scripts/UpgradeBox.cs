@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UpgradeBox : MonoBehaviour
+public class UpgradeBox : MonoBehaviour //Card Upgrade System
 {
     public UpgradeCard[] AllCards;
 
@@ -59,14 +59,11 @@ public class UpgradeBox : MonoBehaviour
             case UpgradeEnum.Range:
                 PlayersUpgrade.UpgradeRange();
                 break;
-            case UpgradeEnum.Firerate:
-                PlayersUpgrade.UpgradeFirerate();
+            case UpgradeEnum.UpgradeWeapon:
+                PlayersUpgrade.UpgradeWeapon();
                 break;
             case UpgradeEnum.MovementSpeed:
                 PlayersUpgrade.UpgradeMovementSpeed();
-                break;
-            case UpgradeEnum.Damage:
-                Debug.Log("Damage Upgraded");
                 break;
         }
     }
@@ -79,14 +76,11 @@ public class UpgradeBox : MonoBehaviour
             case UpgradeEnum.Range:
                 PlayersUpgrade.UpgradeRange();
                 break;
-            case UpgradeEnum.Firerate:
-                PlayersUpgrade.UpgradeFirerate();
+            case UpgradeEnum.UpgradeWeapon:
+                PlayersUpgrade.UpgradeWeapon();
                 break;
             case UpgradeEnum.MovementSpeed:
                 PlayersUpgrade.UpgradeMovementSpeed();
-                break;
-            case UpgradeEnum.Damage:
-                Debug.Log("Damage Upgraded");
                 break;
         }
     }

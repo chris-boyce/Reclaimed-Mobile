@@ -5,7 +5,6 @@ using UnityEngine;
 public class UpgradePlayer : MonoBehaviour
 {
     public CharcterMovement PlayersMovement;
-    public CharcterHealth PlayersHealth;
     public CharcterFiringScript PlayersFiringScript;
     public CircleCollider2D PlayersRangeCircle;
 
@@ -26,9 +25,10 @@ public class UpgradePlayer : MonoBehaviour
     {
         PlayersRangeCircle.radius = PlayersRangeCircle.radius + 0.1f;
     }
-    public void UpgradeFirerate()
+    public void UpgradeWeapon()
     {
-        PlayersFiringScript.UpgradeFirerate();
+        PlayersFiringScript.UpgradeWeapon();
+        PlayersFiringScript.SetIcon();
     }
     public void UpgradeMovementSpeed()
     {

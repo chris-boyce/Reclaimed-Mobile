@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class WeaponUnlockBox : MonoBehaviour
 {
-    public WeaponTypes UnlockedWeapon;
+    //public WeaponTypes UnlockedWeapon;
+    public GunCard[] AllGuns;
+    public GunCard UnlockedGun;
     public WeaponUpgrades WeaponUpgrades;
     public CharcterFiringScript CharcterFiringScript;
     public GameObject UI;
@@ -19,23 +21,27 @@ public class WeaponUnlockBox : MonoBehaviour
 
     private void Start()
     {
+        AllGuns = Resources.LoadAll<GunCard>("GunCards");
+        UnlockedGun = AllGuns[Random.Range(0, AllGuns.Length)];
         UI.SetActive(false);
-        UnlockedWeapon = (WeaponTypes)Random.Range(0, System.Enum.GetValues(typeof(WeaponTypes)).Length - 1);
-        Debug.Log(UnlockedWeapon.ToString());
     }
     public void ChangePrimaryWeapon()
     {
-        WeaponUpgrades.ChangePrimary(UnlockedWeapon);
+        CharcterFiringScript.GunList[0] = UnlockedGun;
+        CharcterFiringScript.SetBullet();
+        CharcterFiringScript.SetIcon();
     }
     public void ChangeSecondaryWeapon()
     {
-        WeaponUpgrades.ChangeSecondary(UnlockedWeapon);
+        CharcterFiringScript.GunList[1] = UnlockedGun;
+        CharcterFiringScript.SetBullet();
+        CharcterFiringScript.SetIcon();
     }
     public void ToggleUI()
     {
-        PrimaryWeaponText.text = CharcterFiringScript.Primary.ToString();
-        SecondaryWeaponText.text = CharcterFiringScript.Secondary.ToString();
-        NewWeaponText.text = UnlockedWeapon.ToString();
+        PrimaryWeaponText.text = CharcterFiringScript.GunList[0].Name.ToString();
+        SecondaryWeaponText.text = CharcterFiringScript.GunList[1].Name.ToString();
+        NewWeaponText.text = UnlockedGun.Name.ToString();
         UI.SetActive(true);
     }
 
