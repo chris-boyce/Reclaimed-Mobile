@@ -19,9 +19,10 @@ MonoBehaviour:
   FireRate: 1
   BulletVelocity: 10
   Range: 5
-  Bullet: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
-  BI: {fileID: 0}
-  Gun: {fileID: 0}
   Penetration: 0
   AmountOfPellets: 10
   SpreadAngleMax: 0
+  Bullet: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
+  Gun: {fileID: 0}
+  BI: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 2a35ec12c23e7c54fac323ede8537f03, type: 3}
