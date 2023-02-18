@@ -15,9 +15,7 @@ public class UpgradeBox : MonoBehaviour //Card Upgrade System
 
     public GameObject UI;
     public TextMeshProUGUI CardHeading1;
-    public TextMeshProUGUI CardDescription1;
     public TextMeshProUGUI CardHeading2;
-    public TextMeshProUGUI CardDescription2;
 
     private void Start()
     {
@@ -36,8 +34,7 @@ public class UpgradeBox : MonoBehaviour //Card Upgrade System
         UI.SetActive(true);
         CardHeading1.text = Card1.UpgradeName;
         CardHeading2.text = Card2.UpgradeName;
-        CardDescription1.text = Card1.UpgradeDescription;
-        CardDescription2.text = Card2.UpgradeDescription;
+
     }
     public void DisableUI()
     {
