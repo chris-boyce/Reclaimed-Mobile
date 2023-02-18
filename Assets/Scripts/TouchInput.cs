@@ -12,6 +12,8 @@ public class TouchInput : MonoBehaviour
     public float MoveX;
     public float MoveY;
 
+
+
     public bool ToggleMovementSystem = false;
 
 
@@ -19,6 +21,7 @@ public class TouchInput : MonoBehaviour
     {
         FingerCircle.SetActive(false); //Turns off UI 
         SettingMenuController.Togglemovement += TouchInput_Togglemovement;
+        
     }
 
     private void TouchInput_Togglemovement()
