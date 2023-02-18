@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4483917038879176444}
   - component: {fileID: 5335831734216891591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1784794724274762676}
   - component: {fileID: 1462586011060190301}
   - component: {fileID: 7251503820800697789}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 2289484596170715655}
   - component: {fileID: 5276674412423067961}
   - component: {fileID: 1827063742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Speed: 400
+  Speed: 300
   NextWaypointDistence: 3
   EnemyRange: 5
 --- !u!114 &2289484596170715655
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  drawGizmos: 1
+  drawGizmos: 0
   detailedGizmos: 0
   startEndModifier:
     addPoints: 0
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4150736378077749131}
   - component: {fileID: 8905778824967161213}
   - component: {fileID: 7253059947404894529}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

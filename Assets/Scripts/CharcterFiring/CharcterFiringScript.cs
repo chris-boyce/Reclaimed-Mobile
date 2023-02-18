@@ -66,33 +66,6 @@ public class CharcterFiringScript : MonoBehaviour
             }
         }
 
-        playerAnim.SetBool("IsRight", false);
-        playerAnim.SetBool("IsLeft", false);
-        playerAnim.SetBool("IsDown", false);
-        playerAnim.SetBool("IsUp", false);
-
-        Debug.Log(transform.right);
-        if(transform.right.x < 0)
-        {
-            playerAnim.SetBool("IsLeft", true);
-        }
-        if (transform.right.x > 0)
-        {
-            playerAnim.SetBool("IsRight", true);
-        }
-        if (transform.right.y > 0)
-        {
-            playerAnim.SetBool("IsUp", true);
-        }
-        if (transform.right.y < 0)
-        {
-            playerAnim.SetBool("IsDown", true);
-        }
-        //if (transform.rotation.z is >= -45 and >= -135)
-        //{
-        //    Debug.Log("Down");
-        //    playerAnim.SetBool("IsDown", true);
-        //}
 
     }
 

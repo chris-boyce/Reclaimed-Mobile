@@ -17,8 +17,8 @@ MonoBehaviour:
   WeaponType: 0
   Damage: 4
   FireRate: 0.5
-  BulletVelocity: 3
-  Range: 2
+  BulletVelocity: 5
+  Range: 5
   Penetration: 0
   AmountOfPellets: 0
   SpreadAngleMax: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UpgradeBox : MonoBehaviour //Card Upgrade System
 {
@@ -21,6 +22,7 @@ public class UpgradeBox : MonoBehaviour //Card Upgrade System
     private void Start()
     {
         AllCards = Resources.LoadAll<UpgradeCard>("UpgradeCards");
+        PlayersUpgrade = FindObjectOfType<UpgradePlayer>();
         ShuffleCards();
 
     }

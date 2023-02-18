@@ -33,6 +33,7 @@ public class UpgradePlayer : MonoBehaviour
     public void UpgradeMovementSpeed()
     {
         PlayersMovement.MovementSpeed = PlayersMovement.MovementSpeed + 0.5f;
+        Debug.Log("Has Run");
     }
 
 
