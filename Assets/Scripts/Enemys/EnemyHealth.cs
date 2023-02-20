@@ -23,7 +23,6 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
     {
         //Debug.Log(gameObject.name + "Has Taken : " + DamageTaken + "And Has HP: " + Health);
         Health = Health - DamageTaken;
-        StartCoroutine(Flash()); 
         StartCoroutine(DamageText(DamageTaken));
         if(Health < 0)
         {
@@ -41,15 +40,7 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
         GiveXP.Invoke(XP); //System Event that is called when dies and links to the CharcterXP and gives the XP (Linked in the WaveSpawner)
     }
 
-    IEnumerator Flash() //Damage flash
-    {
-        if (SpriteRenderer == null)
-            yield return null;
-        
-        SpriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(.1f);
-        SpriteRenderer.color = DefaultColor;
-    }
+
 
     IEnumerator DamageText(float DamageTaken) //Damage Text
     {

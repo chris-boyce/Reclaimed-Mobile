@@ -13,7 +13,6 @@ public class EnemyChaseScript : MonoBehaviour
 
     Path CurrentPath;
     int CurrentWaypoint = 0;
-    bool ReachEndOfPath = false;
 
     private EnemyAim EnemyAim;
 
@@ -54,12 +53,10 @@ public class EnemyChaseScript : MonoBehaviour
             return;
         if (CurrentWaypoint >= CurrentPath.vectorPath.Count)
         {
-            ReachEndOfPath = true;
             return;
         }
         else
         {
-            ReachEndOfPath = false;
         }
         Vector2 Direction = ((Vector2)CurrentPath.vectorPath[CurrentWaypoint] - RB.position).normalized; //Movement along path
         Vector2 Force = Direction * Speed * Time.deltaTime;
