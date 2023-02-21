@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CharcterHealth : MonoBehaviour, IDamageable<float>
 {
+    public float MaxHealth = 100;
     public float health = 100;
     private HealthBar HealthBar;
 
     private void Start()
     {
+        health = MaxHealth;
         HealthBar = GameObject.FindObjectOfType<HealthBar>();
         HealthBar.MAXHEALTH = health;
     }

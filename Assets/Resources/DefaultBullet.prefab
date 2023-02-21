@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1347087433054146935
 Transform:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ Animator:
   m_GameObject: {fileID: 3553610888148493695}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f12ac2a55d4ef2f46983c78d42540221, type: 2}
+  m_Controller: {fileID: 9100000, guid: a206e022c16dc1e4ab8921fef5901432, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   Penetration: 0
   TargetsTag: Enemy
   BloodSplater: {fileID: 764147045764695356, guid: 39784055be9aea14e87770830da5fd37, type: 3}
+  blood: {fileID: 0}
   Collpoint: {x: 0, y: 0}
 --- !u!61 &5014894061396222719
 BoxCollider2D:

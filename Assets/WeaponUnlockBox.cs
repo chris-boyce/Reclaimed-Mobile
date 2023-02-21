@@ -23,6 +23,7 @@ public class WeaponUnlockBox : MonoBehaviour
     {
         AllGuns = Resources.LoadAll<GunCard>("GunCards");
         UnlockedGun = AllGuns[Random.Range(0, AllGuns.Length)];
+        CharcterFiringScript = FindObjectOfType<CharcterFiringScript>();
         UI.SetActive(false);
     }
     public void ChangePrimaryWeapon()

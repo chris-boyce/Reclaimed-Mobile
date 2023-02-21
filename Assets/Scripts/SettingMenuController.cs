@@ -21,9 +21,10 @@ public class SettingMenuController : MonoBehaviour
         MenuActive = !MenuActive;
         if(MenuActive)
         {
-            Time.timeScale = 0f;
+            StartCoroutine(Wait(0.5f));
             LoadSceneControl.OnSceneLoadAdditive();
             Togglemovement();
+            
         }
         else
         {
@@ -32,6 +33,10 @@ public class SettingMenuController : MonoBehaviour
             Togglemovement();
         }
     }
-
+    private IEnumerator Wait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Time.timeScale = 0.0f;
+    }
 
 }
