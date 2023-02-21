@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class BulletMovement : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class BulletMovement : MonoBehaviour
     private Vector3 SpawnPos;
     private float Distence;
     public string TargetsTag = "Enemy"; //Allows the bullet to check the target
+    public GameObject BloodSplater;
+    public BloodSplatter blood;
+    public Vector2 Collpoint;
     private void Start()
     {
         SpawnPos = transform.position;
@@ -31,6 +35,10 @@ public class BulletMovement : MonoBehaviour
         {
             IDamageable <float> Hit = collision.GetComponent<IDamageable<float>>(); //Uses the interface system to find the interface on anything that is damageable
             Hit.Damage(Damage); //Applys the damage through the interface system
+
+            Vector2 closestPoint = collision.ClosestPoint(Collpoint);
+            BloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
+            BloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
             Destroy(gameObject);    
             //TODO CHECK FOR PENITION 
         }

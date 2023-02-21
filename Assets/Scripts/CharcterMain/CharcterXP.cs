@@ -28,7 +28,6 @@ public class CharcterXP : MonoBehaviour
         {
             LevelUp();
         }
-        Debug.Log(TotalXP / XPTillNextLevel);
         XpBar.fillAmount = (TotalXP / XPTillNextLevel);
     }
 
