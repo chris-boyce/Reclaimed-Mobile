@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,7 @@ public class BulletMovement : MonoBehaviour
     private void Start()
     {
         SpawnPos = transform.position;
+        BloodSplater = Resources.Load<GameObject>("Blood");
     }
     void Update()
     {

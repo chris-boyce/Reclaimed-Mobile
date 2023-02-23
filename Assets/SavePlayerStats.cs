@@ -13,14 +13,18 @@ public class SavePlayerStats : MonoBehaviour
     public float SavedRange;
     public GunCard SavedPrimaryWeapon;
     public GunCard SavedSecondaryWeapon;
-    public SaveScriptable SaveSO;
+    public int SavedLevel;
+
 
     public GameObject Player;
     private void Start()
     {
-        SaveSO = Resources.Load<SaveScriptable>("SaveSO");
-        SaveSO.SavedCurrentLevel = 1;
         DontDestroyOnLoad(this.gameObject);
+        if(SavedLevel == 0)
+        {
+            SavedLevel = 1;
+            PlayerPrefs.SetInt("SavedPlayerLevel", SavedLevel);
+        }
        
     }
     private void OnLevelWasLoaded(int level)
@@ -48,6 +52,7 @@ public class SavePlayerStats : MonoBehaviour
         PlayerPrefs.SetFloat("SaveMovementSpeed", SavedMovementSpeed);
         PlayerPrefs.SetFloat("SavedHealth", SavedHealth);
         PlayerPrefs.SetFloat("SavedRange", SavedRange);
+        PlayerPrefs.SetInt("SavedPlayerLevel", SavedLevel);
 
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(GunValues));
         using (StringWriter sw = new StringWriter()) 

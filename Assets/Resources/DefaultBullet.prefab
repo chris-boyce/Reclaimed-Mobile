@@ -103,7 +103,7 @@ MonoBehaviour:
   Range: 0
   Penetration: 0
   TargetsTag: Enemy
-  BloodSplater: {fileID: 764147045764695356, guid: 39784055be9aea14e87770830da5fd37, type: 3}
+  BloodSplater: {fileID: 0}
   Collpoint: {x: 0, y: 0}
 --- !u!61 &5014894061396222719
 BoxCollider2D:
