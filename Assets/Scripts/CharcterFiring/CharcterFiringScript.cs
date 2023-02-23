@@ -22,13 +22,43 @@ public class CharcterFiringScript : MonoBehaviour
     {
         BI = GetComponent<BulletInstanitate>();
         AutoAimer = GetComponent<AutoAimer>();
+
         SetBullet();
         SetIcon();
+    }
+
+    public void LoadGunFromSave(GunValues Primary)
+    {
+        switch (Primary.SavedWeaponType)
+        {
+            case WeaponTypes.Rifle:
+                GunList[0] = Resources.Load<GunCard>("GunCards/Rifle");
+                break;
+            case WeaponTypes.Minigun:
+                GunList[0] = Resources.Load<GunCard>("GunCards/MiniGun");
+                break;
+            case WeaponTypes.Shotgun:
+                GunList[0] = Resources.Load<GunCard>("GunCards/Shotgun");
+                break;
+            case WeaponTypes.RocketLauncher:
+                break;
+            case WeaponTypes.Circular:
+                GunList[0] = Resources.Load<GunCard>("GunCards/Circular");
+                break; 
+            case WeaponTypes.Turret:
+                break;
+            
+        }
+
+
+
     }
     public void SetIcon()
     {
         WeaponIcons[0].sprite = GunList[0].Icon;
         WeaponIcons[1].sprite = GunList[1].Icon;
+
+
 
     }
     public void SetBullet()
@@ -73,6 +103,7 @@ public class CharcterFiringScript : MonoBehaviour
     {
         GunList[0].UpgradeWeapon();
         GunList[1].UpgradeWeapon();
+
     }
 
 }

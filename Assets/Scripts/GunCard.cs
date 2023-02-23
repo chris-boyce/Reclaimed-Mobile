@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,10 +6,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
+[System.Serializable]
+public class GunValues
+{
+    public WeaponTypes SavedWeaponType;
+    public float SavedDamage;
+    public float SavedFireRate;
+    public float SavedBulletVelocity;
+}
+
 [CreateAssetMenu(fileName = "Guns", menuName = "Guns")]
 public class GunCard : ScriptableObject
 {
-    [Header("Gun Info")] public string Name;
+    public GunValues SavedGunValues;
+    [Header("Gun Info")]
+    public string Name;
     public string Description;
     public WeaponTypes WeaponType;
 
@@ -41,6 +53,7 @@ public class GunCard : ScriptableObject
         RT_FireRate = FireRate;
         RT_BulletVelocity  = BulletVelocity;
         RT_Range = Range;
+        SaveValues();
     }
 
     public void Shoot()
@@ -71,6 +84,7 @@ public class GunCard : ScriptableObject
         RT_Damage = Multiplier(RT_Damage, 1.5f);
         RT_FireRate = Reducer(RT_FireRate, 0.8f);
 
+
     }
     private float Multiplier(float Input, float Multiplier)
     {
@@ -81,6 +95,14 @@ public class GunCard : ScriptableObject
     {
         return Reducer * Input;
     }
+    public void SaveValues()
+    {
+        Debug.Log("has Run saved");
+        SavedGunValues.SavedWeaponType = WeaponType;
+        SavedGunValues.SavedBulletVelocity = BulletVelocity;
+        SavedGunValues.SavedDamage = Damage;
+        SavedGunValues.SavedFireRate = FireRate;
+    }    
 
 
 }

@@ -14,7 +14,6 @@ public class BulletMovement : MonoBehaviour
     private float Distence;
     public string TargetsTag = "Enemy"; //Allows the bullet to check the target
     public GameObject BloodSplater;
-    public BloodSplatter blood;
     public Vector2 Collpoint;
     private void Start()
     {
@@ -37,8 +36,8 @@ public class BulletMovement : MonoBehaviour
             Hit.Damage(Damage); //Applys the damage through the interface system
 
             Vector2 closestPoint = collision.ClosestPoint(Collpoint);
-            BloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
-            BloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
+            GameObject bloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
+            bloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
             Destroy(gameObject);    
             //TODO CHECK FOR PENITION 
         }

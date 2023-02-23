@@ -10,14 +10,12 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
 {
     private float Health = 50f;
     public TextMeshProUGUI DamageTMP;
-    public SpriteRenderer SpriteRenderer;
-    public Color DefaultColor;
     public float XP;
 
     public event System.Action <float> GiveXP;
     private void Start()
     {
-        DefaultColor = SpriteRenderer.color;
+
     }
     public void Damage(float DamageTaken)
     {

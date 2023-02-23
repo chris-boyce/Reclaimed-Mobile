@@ -41,7 +41,14 @@ public class WeaponUnlockBox : MonoBehaviour
     public void ToggleUI()
     {
         PrimaryWeaponText.text = CharcterFiringScript.GunList[0].Name.ToString();
-        SecondaryWeaponText.text = CharcterFiringScript.GunList[1].Name.ToString();
+        if (CharcterFiringScript.GunList[1] != null )
+        {
+            SecondaryWeaponText.text = CharcterFiringScript.GunList[1].Name.ToString();
+        }
+        
+
+
+
         NewWeaponText.text = UnlockedGun.Name.ToString();
         UI.SetActive(true);
     }

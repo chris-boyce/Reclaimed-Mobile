@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8844c267d9f1414c89743e1829c9982, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
+  SavedGunValues:
+    SavedWeaponType: 6
+    SavedDamage: 25
+    SavedFireRate: 1
+    SavedBulletVelocity: 10
   Name: Sniper
-  Description: Sniper Rifle
+  Description: Sharp and Deadly
   WeaponType: 6
   Damage: 25
   FireRate: 1

@@ -29,7 +29,7 @@ public class SettingMenuController : MonoBehaviour
         else
         {
             Time.timeScale = 1.0f;
-            LoadSceneControl.OnSceneDeloadAdditive();
+            LoadSceneControl.OnSceneDeloadAdditive(3);
             Togglemovement();
         }
     }

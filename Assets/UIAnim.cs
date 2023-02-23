@@ -8,13 +8,19 @@ using UnityEditor;
 
 public class UIAnim : MonoBehaviour
 {
-    Vector3 StartPos;
-    Vector3 EndPos;
+    [SerializeField , HideInInspector] Vector3 StartPos;
+    [SerializeField, HideInInspector] Vector3 EndPos;
+    [SerializeField, HideInInspector] bool DeloadSceneOnScrollOut;
+    [SerializeField, HideInInspector] int UnloadIndex;
+
     public bool isBackground = false;
     public AnimationCurve Curve;
     public float SpeedOfAnim = 2f;
     private float ScaleBackground;
     private RectTransform RT;
+    
+    LoadScene loadScene;
+    
 
     //Custom Editor that will add varaible if not applied to a background
     #region Editor
@@ -31,6 +37,10 @@ public class UIAnim : MonoBehaviour
             {
                 DrawItem(_UIAnim);
             }
+            else
+            {
+                DrawItemBG(_UIAnim);
+            }
         }
 
         static void DrawItem(UIAnim _UIAnim)
@@ -42,6 +52,17 @@ public class UIAnim : MonoBehaviour
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
             _UIAnim.EndPos = EditorGUILayout.Vector3Field("End Pos : ", _UIAnim.EndPos);
+            EditorGUILayout.EndHorizontal();
+        }
+        static void DrawItemBG(UIAnim _UIAnim)
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Background Object Varaiables");
+            EditorGUILayout.BeginHorizontal();
+            _UIAnim.DeloadSceneOnScrollOut = EditorGUILayout.Toggle("DeloadSceneOnScrollOut : ", _UIAnim.DeloadSceneOnScrollOut);
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            _UIAnim.UnloadIndex = EditorGUILayout.IntField("Unload Index :  ", _UIAnim.UnloadIndex);
             EditorGUILayout.EndHorizontal();
         }
     }
@@ -77,6 +98,21 @@ public class UIAnim : MonoBehaviour
         LeanTween.moveY(gameObject, Screen.height / 2, SpeedOfAnim).setEase(Curve);
         Debug.Log("Running Me Daa");
     }    
+    public void BackgroundScrollOut()
+    {
+        LeanTween.moveY(gameObject, Screen.height * 2, SpeedOfAnim).setEase(Curve).setOnComplete(DeleteScenes);
+        Debug.Log("Running Me Daa");
+
+    }
+    void DeleteScenes()
+    {
+        if(DeloadSceneOnScrollOut)
+        {
+            loadScene = GetComponentInChildren<LoadScene>();
+            loadScene.OnSceneDeloadAdditive(UnloadIndex);
+        }
+        
+    }
 
 
     void RunAnim()

@@ -15,9 +15,10 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene(LoadingSceneIndex , LoadSceneMode.Additive);
     }
-    public void OnSceneDeloadAdditive()
+    public void OnSceneDeloadAdditive(int Scene)
     {
-        SceneManager.UnloadSceneAsync(LoadingSceneIndex);
+        SceneManager.UnloadSceneAsync(Scene);
+        
     }
 
 }

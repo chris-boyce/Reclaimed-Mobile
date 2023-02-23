@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d5173bbef294a224da23388e833edd50
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/EndRoundScene.unity
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SettingsMenu.unity
     guid: 60bc33977716bb94793c3b3170f5230a
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 7f5549e740179e94fbb7a2159e31da36
   m_configObjects: {}
