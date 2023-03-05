@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
 public class BulletMovement : MonoBehaviour
 {

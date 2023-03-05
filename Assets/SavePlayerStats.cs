@@ -39,6 +39,7 @@ public class SavePlayerStats : MonoBehaviour
 
     public void SaveStats()
     {
+        
         Debug.Log("Saved Stats");
         SavedMovementSpeed = Player.GetComponent<CharcterMovement>().MovementSpeed;
         SavedHealth = Player.GetComponent<CharcterHealth>().MaxHealth;
