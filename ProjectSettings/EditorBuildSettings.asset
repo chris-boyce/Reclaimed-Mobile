@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: e599f2a1b9431ce48b9aa8bf73d62e10
+  - enabled: 1
+    path: Assets/Scenes/PreScreen.unity
+    guid: d90ec70266b10e94ab7640549f9e8ce5
   m_configObjects: {}

@@ -109,6 +109,7 @@ public class UIAnim : MonoBehaviour
         {
             loadScene = GetComponentInChildren<LoadScene>();
             loadScene.OnSceneDeloadAdditive(UnloadIndex);
+
         }
         
     }
