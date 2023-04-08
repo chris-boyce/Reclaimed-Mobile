@@ -1201,6 +1201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad208e0b3818bb848ac4d488f2c2b8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPos: {x: 0, y: 0, z: 0}
+  EndPos: {x: 0, y: 0, z: 0}
+  DeloadSceneOnScrollOut: 1
+  UnloadIndex: 4
   isBackground: 1
   Curve:
     serializedVersion: 2
@@ -1226,10 +1230,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SpeedOfAnim: 2
-  DeloadSceneOnScrollOut: 1
-  loadScene: {fileID: 0}
-  UnloadIndex: 4
+  SpeedOfAnim: 1
 --- !u!114 &1326821901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27672715f4426844fb249bc6c652106e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f6fc15a6252cde43a5efc99bf5e5f54, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

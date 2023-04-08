@@ -14,11 +14,15 @@ public class SavePlayerStats : MonoBehaviour
     public GunCard SavedPrimaryWeapon;
     public GunCard SavedSecondaryWeapon;
     public int SavedLevel;
+    public int SavedGold;
+    public List<int> SavedPurchasedItemsID = new List<int>();
 
 
     public GameObject Player;
     private void Start()
     {
+        SavedGold = 30;
+        SaveGold();
         DontDestroyOnLoad(this.gameObject);
         if(SavedLevel == 0)
         {
@@ -35,6 +39,11 @@ public class SavePlayerStats : MonoBehaviour
             UnloadFile();
         }
 
+    }
+
+    public void SaveGold()
+    {
+        PlayerPrefs.SetInt("SavedGold", SavedGold);
     }
 
     public void SaveStats()
@@ -54,6 +63,7 @@ public class SavePlayerStats : MonoBehaviour
         PlayerPrefs.SetFloat("SavedHealth", SavedHealth);
         PlayerPrefs.SetFloat("SavedRange", SavedRange);
         PlayerPrefs.SetInt("SavedPlayerLevel", SavedLevel);
+        PlayerPrefs.SetInt("SavedGold", SavedGold);
 
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(GunValues));
         using (StringWriter sw = new StringWriter()) 
