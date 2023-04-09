@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - WeaponBox
   - UpgradeBox
+  - Wall
+  - SaveStat
+  - ItemUI
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - UI
   - Obstacle
   - EnemyNonCol
-  - 
+  - EnemyPathfinding
   - 
   - 
   - 

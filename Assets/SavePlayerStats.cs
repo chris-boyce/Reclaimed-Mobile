@@ -16,18 +16,24 @@ public class SavePlayerStats : MonoBehaviour
     public int SavedLevel;
     public int SavedGold;
     public List<int> SavedPurchasedItemsID = new List<int>();
+    public Dictionary<int, int> LevelDictionary = new Dictionary<int, int>();
 
 
     public GameObject Player;
     private void Start()
     {
+        LevelDictionary.Add(1,1);
+        LevelDictionary.Add(2,7);
+        LevelDictionary.Add(3,9);
+
+
+
         SavedGold = 30;
         SaveGold();
         DontDestroyOnLoad(this.gameObject);
         if(SavedLevel == 0)
         {
-            SavedLevel = 1;
-            PlayerPrefs.SetInt("SavedPlayerLevel", SavedLevel);
+            PlayerPrefs.SetInt("SavedPlayerLevel", 1);
         }
        
     }
@@ -62,6 +68,7 @@ public class SavePlayerStats : MonoBehaviour
         PlayerPrefs.SetFloat("SaveMovementSpeed", SavedMovementSpeed);
         PlayerPrefs.SetFloat("SavedHealth", SavedHealth);
         PlayerPrefs.SetFloat("SavedRange", SavedRange);
+        SavedLevel = PlayerPrefs.GetInt("SavedPlayerLevel");
         PlayerPrefs.SetInt("SavedPlayerLevel", SavedLevel);
         PlayerPrefs.SetInt("SavedGold", SavedGold);
 

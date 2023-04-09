@@ -8,6 +8,7 @@ public class EndRound : MonoBehaviour
     public GameObject[] EnemiesAlive;
     public LoadScene LoadScene;
     public SavePlayerStats SaveStats;
+    public int LevelNum;
 
     private bool GameEnded = false;
     private void Start()
@@ -21,6 +22,7 @@ public class EndRound : MonoBehaviour
         EnemiesAlive = GameObject.FindGameObjectsWithTag("Enemy");
         if (EnemiesAlive.Length == 0 && GameEnded == false)//Checks for enemies alive 
         {
+            PlayerPrefs.SetInt("SavedPlayerLevel", LevelNum);
             Debug.Log("Should Have Ended");
             SaveStats.SaveStats();
             LoadScene.OnSceneLoadAdditive();//Loads new scene

@@ -69,10 +69,22 @@ public class GunCard : ScriptableObject
             {
                 BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets);
             }
+            else if (WeaponType == WeaponTypes.RocketLauncher)
+            {
+                BI.ShootRocket(Bullet, RT_Damage,RT_Range,RT_BulletVelocity,Penetration);
+            }
             else
             {
                 Debug.Log(RT_Damage.ToString());
-                BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                if (Bullet != null)
+                {
+                    BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                }
+                
+
+
+
+
             }
             Timer = 0f;
         }

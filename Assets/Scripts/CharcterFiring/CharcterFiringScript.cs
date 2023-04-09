@@ -41,6 +41,7 @@ public class CharcterFiringScript : MonoBehaviour
                 GunList[0] = Resources.Load<GunCard>("GunCards/Shotgun");
                 break;
             case WeaponTypes.RocketLauncher:
+                GunList[0] = Resources.Load<GunCard>("GunCards/RocketLauncher");
                 break;
             case WeaponTypes.Circular:
                 GunList[0] = Resources.Load<GunCard>("GunCards/Circular");
@@ -91,6 +92,9 @@ public class CharcterFiringScript : MonoBehaviour
                     GunList[i].Shoot();
                     break;
                 case WeaponTypes.Shotgun:
+                    GunList[i].Shoot();
+                    break;
+                case WeaponTypes.RocketLauncher:
                     GunList[i].Shoot();
                     break;
             }

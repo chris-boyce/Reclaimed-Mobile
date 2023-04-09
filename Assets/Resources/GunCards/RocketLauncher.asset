@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8844c267d9f1414c89743e1829c9982, type: 3}
+  m_Name: RocketLauncher
+  m_EditorClassIdentifier: 
+  SavedGunValues:
+    SavedWeaponType: 3
+    SavedDamage: 100
+    SavedFireRate: 7
+    SavedBulletVelocity: 4
+  Name: Rocket Launcher
+  Description: BOOOM
+  WeaponType: 3
+  Damage: 100
+  FireRate: 7
+  BulletVelocity: 4
+  Range: 15
+  Penetration: 0
+  AmountOfPellets: 0
+  SpreadAngleMax: 0
+  Bullet: {fileID: 7160967099665658824, guid: 640e43d0e147d964db87d71705e52988, type: 3}
+  Gun: {fileID: 0}
+  BI: {fileID: 0}
+  Icon: {fileID: 235706079, guid: 38fc4cf617e06a644be1b5ec148c2c1a, type: 3}

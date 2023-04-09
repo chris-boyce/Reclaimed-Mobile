@@ -241,8 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageTMP: {fileID: 7251503820800697789}
-  SpriteRenderer: {fileID: 0}
-  DefaultColor: {r: 0, g: 0, b: 0, a: 0}
   XP: 10
 --- !u!114 &4928329177254508543
 MonoBehaviour:
@@ -257,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Speed: 300
+  Speed: 500
   NextWaypointDistence: 3
   EnemyRange: 5
 --- !u!114 &2289484596170715655
@@ -301,10 +299,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
-  Damage: 5
-  Range: 5
-  BulletVelo: 5
-  Firerate: 1
+  Damage: 1
+  Range: 2
+  BulletVelo: 8
+  Firerate: 0.3
 --- !u!114 &1827063742
 MonoBehaviour:
   m_ObjectHideFlags: 0

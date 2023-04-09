@@ -48,4 +48,14 @@ public class BulletInstanitate : MonoBehaviour
         }
 
     }
+    public void ShootRocket(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration)
+    {
+        GameObject TempBullet = Instantiate(Projectile, transform.position, transform.rotation); //Spawns and give bullet stats
+        RocketMovement TempBulletMovementScript = TempBullet.GetComponent<RocketMovement>();
+        TempBulletMovementScript.Damage = Damage;
+        TempBulletMovementScript.Range = Range;
+        TempBulletMovementScript.BulletVelocity = BulletVelocity;
+        TempBulletMovementScript.Penetration = Penetration;
+    }
+
 }

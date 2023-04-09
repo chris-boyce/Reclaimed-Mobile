@@ -369,8 +369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageTMP: {fileID: 802500032049000903}
-  SpriteRenderer: {fileID: 0}
-  DefaultColor: {r: 0.8490566, g: 0.17221431, b: 0.779801, a: 0}
   XP: 20
 --- !u!114 &8119546620617839228
 MonoBehaviour:
@@ -430,8 +428,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
   Damage: 5
-  Range: 4
-  BulletVelo: 2
+  Range: 7
+  BulletVelo: 10
   Firerate: 1
 --- !u!114 &8034069216020140445
 MonoBehaviour:

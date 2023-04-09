@@ -511,9 +511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Speed: 200
+  Speed: 300
   NextWaypointDistence: 3
-  EnemyRange: 10
+  EnemyRange: 5
 --- !u!114 &635827769456856955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,10 +555,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
-  Damage: 5
+  Damage: 7
   Range: 15
-  BulletVelo: 5
-  Firerate: 3
+  BulletVelo: 7
+  Firerate: 2
 --- !u!114 &8034069216020140445
 MonoBehaviour:
   m_ObjectHideFlags: 0

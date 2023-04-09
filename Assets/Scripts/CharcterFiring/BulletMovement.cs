@@ -14,11 +14,13 @@ public class BulletMovement : MonoBehaviour
     private float Distence;
     public string TargetsTag = "Enemy"; //Allows the bullet to check the target
     public GameObject BloodSplater;
+
     public Vector2 Collpoint;
     private void Start()
     {
         SpawnPos = transform.position;
         BloodSplater = Resources.Load<GameObject>("Blood");
+    
     }
     void Update()
     {
@@ -39,7 +41,8 @@ public class BulletMovement : MonoBehaviour
             Vector2 closestPoint = collision.ClosestPoint(Collpoint);
             GameObject bloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
             bloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
-            Destroy(gameObject);    
+            Destroy(gameObject);
+       
             //TODO CHECK FOR PENITION 
         }
     }
