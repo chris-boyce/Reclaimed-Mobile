@@ -13,10 +13,12 @@ public class LoadScene : MonoBehaviour
     }
     public void OnSceneLoadAdditive()
     {
+
         SceneManager.LoadScene(LoadingSceneIndex , LoadSceneMode.Additive);
     }
     public void OnSceneDeloadAdditive(int Scene)
     {
+        
         SceneManager.UnloadSceneAsync(Scene);
         
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyController : MonoBehaviour
 {
@@ -9,9 +10,6 @@ public class DontDestroyController : MonoBehaviour
 
     void Start()
     {
-        
-
-
         Time.timeScale = 1.0f;
         SavePlayerStats[] others = FindObjectsOfType<SavePlayerStats>();
         if (others.Length > 0)
@@ -22,7 +20,7 @@ public class DontDestroyController : MonoBehaviour
         {
             Instantiate(SaveStats);
         }
-        
+
     }
 
 

@@ -32,6 +32,7 @@ public class GunCard : ScriptableObject
     public bool Penetration;
     public int AmountOfPellets;
     public float SpreadAngleMax;
+    public AudioClip GunShot;
     [Header("Gun GOs")]  
     public GameObject Bullet; //Bullet the Gun Produces
     public GameObject Gun; //What the Gun Looks like in the Hands
@@ -62,6 +63,7 @@ public class GunCard : ScriptableObject
         Timer = Timer + Time.deltaTime;
         if (Timer > RT_FireRate)
         {
+            SoundController.PlaySound(GunShot);
             if (WeaponType == WeaponTypes.Shotgun)
             {
                 if (TwinShot == false)

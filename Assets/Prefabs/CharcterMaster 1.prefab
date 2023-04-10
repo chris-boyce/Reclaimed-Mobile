@@ -297,7 +297,7 @@ Transform:
   m_Children:
   - {fileID: 4301781045402670643}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4301781045219127498
 MonoBehaviour:
@@ -463,6 +463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   health: 100
+  AudioDamage: {fileID: 8300000, guid: 6c8e658c03b1ee9458eef4183edaabd5, type: 3}
+  CritDamage: {fileID: 8300000, guid: 7331f5997edc526469ff002d81181436, type: 3}
 --- !u!61 &4301781045402670647
 BoxCollider2D:
   m_ObjectHideFlags: 0

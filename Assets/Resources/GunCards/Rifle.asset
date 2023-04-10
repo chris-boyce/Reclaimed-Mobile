@@ -27,6 +27,7 @@ MonoBehaviour:
   Penetration: 0
   AmountOfPellets: 0
   SpreadAngleMax: 0
+  GunShot: {fileID: 8300000, guid: bf9a4eea205057a4696c67d6947141bd, type: 3}
   Bullet: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
   Gun: {fileID: 0}
   BI: {fileID: 0}

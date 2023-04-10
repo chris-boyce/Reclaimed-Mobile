@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SavedGunValues:
     SavedWeaponType: 2
-    SavedDamage: 5
-    SavedFireRate: 2
-    SavedBulletVelocity: 5
+    SavedDamage: 8
+    SavedFireRate: 1.5
+    SavedBulletVelocity: 10
   Name: Shotgun
   Description: Large Spread
   WeaponType: 2
@@ -27,6 +27,7 @@ MonoBehaviour:
   Penetration: 0
   AmountOfPellets: 5
   SpreadAngleMax: 25
+  GunShot: {fileID: 8300000, guid: 919b643ee3e22b64981f4de7173bbf71, type: 3}
   Bullet: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
   Gun: {fileID: 0}
   BI: {fileID: 0}

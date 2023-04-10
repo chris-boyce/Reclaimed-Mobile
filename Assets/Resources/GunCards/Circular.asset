@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8844c267d9f1414c89743e1829c9982, type: 3}
   m_Name: Circular
   m_EditorClassIdentifier: 
+  SavedGunValues:
+    SavedWeaponType: 4
+    SavedDamage: 5
+    SavedFireRate: 1
+    SavedBulletVelocity: 10
   Name: Circular Shoot
   Description: Protect Yourself
   WeaponType: 4
@@ -22,7 +27,9 @@ MonoBehaviour:
   Penetration: 0
   AmountOfPellets: 10
   SpreadAngleMax: 0
+  GunShot: {fileID: 8300000, guid: bf9a4eea205057a4696c67d6947141bd, type: 3}
   Bullet: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
   Gun: {fileID: 0}
   BI: {fileID: 0}
   Icon: {fileID: 21300000, guid: 2a35ec12c23e7c54fac323ede8537f03, type: 3}
+  TwinShot: 0
