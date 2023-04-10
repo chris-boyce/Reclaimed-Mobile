@@ -8,7 +8,7 @@ public class EnemyChaseScript : MonoBehaviour
     public Transform Target;
     public float Speed;
 
-    public float NextWaypointDistence = 3f;
+    public float NextWaypointDistence = 1f;
     public float EnemyRange = 1f;
 
     Path CurrentPath;
@@ -72,6 +72,10 @@ public class EnemyChaseScript : MonoBehaviour
         {
             Seeker.StartPath(RB.position, RB.position, OnPathComplete);//Stop moving and shoot
             EnemyAim.AimAtPlayerLocation(Target);
+
+
+
+
             //CanAttack
         }
 

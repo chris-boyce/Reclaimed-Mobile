@@ -16,6 +16,8 @@ public class Spawner
     public bool Finished;
 }
 
+
+
 public class Wavespawner : MonoBehaviour
 {
     public List<GameObject> TypesOfEnemies;
@@ -28,7 +30,10 @@ public class Wavespawner : MonoBehaviour
     public CharcterXP PlayerXP;
 
     private UnityAction<float> DeathXP;
-
+    void Start()
+    {
+        PlayerXP = (CharcterXP)FindObjectOfType(typeof(CharcterXP));
+    }
     private void Update()
     {
         if (!FinishedSpawning)//To Control the end of Level / wave

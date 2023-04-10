@@ -16,6 +16,7 @@ public class CharcterXP : MonoBehaviour
 
     private void Start()
     {
+        XpBar = GameObject.Find("XPBar").GetComponent<Image>();
         XPTillNextLevel = 50f;
     }
 

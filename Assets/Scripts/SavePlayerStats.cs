@@ -25,16 +25,14 @@ public class SavePlayerStats : MonoBehaviour
         LevelDictionary.Add(1,1);
         LevelDictionary.Add(2,7);
         LevelDictionary.Add(3,9);
+        LevelDictionary.Add(4, 10);
 
 
 
         SavedGold = 30;
         SaveGold();
         DontDestroyOnLoad(this.gameObject);
-        if(SavedLevel == 0)
-        {
-            PlayerPrefs.SetInt("SavedPlayerLevel", 1);
-        }
+        
        
     }
     private void OnLevelWasLoaded(int level)
@@ -73,6 +71,7 @@ public class SavePlayerStats : MonoBehaviour
         PlayerPrefs.SetInt("SavedGold", SavedGold);
 
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(GunValues));
+        XmlSerializer xmlSerializer2 = new XmlSerializer(typeof(GunValues));
         using (StringWriter sw = new StringWriter()) 
         {
             xmlSerializer.Serialize(sw, SavedPrimaryWeapon.SavedGunValues);
@@ -80,12 +79,21 @@ public class SavePlayerStats : MonoBehaviour
             Debug.Log(sw.ToString());
         }
 
+        using (StringWriter sw2 = new StringWriter())
+        {
+            xmlSerializer2.Serialize(sw2, SavedSecondaryWeapon.SavedGunValues);
+            PlayerPrefs.SetString("GunValues2", sw2.ToString());
+            Debug.Log(sw2.ToString());
+        }
+
     }
     public void UnloadFile()
     {
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(GunValues));
+        XmlSerializer xmlSerializer2 = new XmlSerializer(typeof(GunValues));
         string text = PlayerPrefs.GetString("GunValues");
-        if(text.Length == 0)
+        string text2 = PlayerPrefs.GetString("GunValues2");
+        if (text.Length == 0)
         {
             Debug.Log("No Saved Data");
            
@@ -99,7 +107,15 @@ public class SavePlayerStats : MonoBehaviour
                 Debug.Log(temp.SavedWeaponType);
                 Player.GetComponentInChildren<CharcterFiringScript>().LoadGunFromSave(temp);
             }
-          
+
+            using (var reader = new System.IO.StringReader(text2))
+            {
+                GunValues temp1 = new GunValues();
+                temp1 = xmlSerializer2.Deserialize(reader) as GunValues;
+                Debug.Log(temp1.SavedWeaponType);
+                Player.GetComponentInChildren<CharcterFiringScript>().LoadGunFromSave2(temp1);
+            }
+
         }
     }
 }

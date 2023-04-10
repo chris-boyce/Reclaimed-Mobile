@@ -35,6 +35,10 @@ public class UpgradePlayer : MonoBehaviour
         PlayersMovement.MovementSpeed = PlayersMovement.MovementSpeed + 0.5f;
         Debug.Log("Has Run");
     }
+    public void TwinShot()
+    {
+        PlayersFiringScript.TwinShot();
+    }
 
 
 }

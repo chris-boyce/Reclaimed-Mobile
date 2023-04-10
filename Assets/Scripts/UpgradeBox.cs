@@ -64,6 +64,9 @@ public class UpgradeBox : MonoBehaviour //Card Upgrade System
             case UpgradeEnum.MovementSpeed:
                 PlayersUpgrade.UpgradeMovementSpeed();
                 break;
+            case UpgradeEnum.SplitShot:
+                PlayersUpgrade.TwinShot();
+                break;
         }
     }
     public void Card2Pressed()
@@ -80,6 +83,9 @@ public class UpgradeBox : MonoBehaviour //Card Upgrade System
                 break;
             case UpgradeEnum.MovementSpeed:
                 PlayersUpgrade.UpgradeMovementSpeed();
+                break;
+            case UpgradeEnum.SplitShot:
+                PlayersUpgrade.TwinShot();
                 break;
         }
     }

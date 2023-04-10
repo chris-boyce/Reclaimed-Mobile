@@ -19,7 +19,7 @@ public class BulletMovement : MonoBehaviour
     private void Start()
     {
         SpawnPos = transform.position;
-        BloodSplater = Resources.Load<GameObject>("Blood");
+        
     
     }
     void Update()
@@ -39,6 +39,7 @@ public class BulletMovement : MonoBehaviour
             Hit.Damage(Damage); //Applys the damage through the interface system
 
             Vector2 closestPoint = collision.ClosestPoint(Collpoint);
+            BloodSplater = Resources.Load<GameObject>("Blood");
             GameObject bloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
             bloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
             Destroy(gameObject);

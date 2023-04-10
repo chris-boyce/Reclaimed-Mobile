@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8844c267d9f1414c89743e1829c9982, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
+  SavedGunValues:
+    SavedWeaponType: 0
+    SavedDamage: 4
+    SavedFireRate: 0.5
+    SavedBulletVelocity: 5
   Name: Rifle
   Description: I am a Rifle
   WeaponType: 0
@@ -26,3 +31,4 @@ MonoBehaviour:
   Gun: {fileID: 0}
   BI: {fileID: 0}
   Icon: {fileID: 21300000, guid: d04036086a8db32468338a8424df933d, type: 3}
+  TwinShot: 0

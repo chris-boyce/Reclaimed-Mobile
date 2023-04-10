@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8844c267d9f1414c89743e1829c9982, type: 3}
   m_Name: MiniGun
   m_EditorClassIdentifier: 
+  SavedGunValues:
+    SavedWeaponType: 1
+    SavedDamage: 5
+    SavedFireRate: 0.05
+    SavedBulletVelocity: 15
   Name: Minigun
   Description: BRBBRBRBRBRB
   WeaponType: 1
-  Damage: 5
-  FireRate: 0.05
+  Damage: 3
+  FireRate: 0.2
   BulletVelocity: 15
   Range: 10
   Penetration: 0
@@ -26,3 +31,4 @@ MonoBehaviour:
   Gun: {fileID: 0}
   BI: {fileID: 0}
   Icon: {fileID: 21300000, guid: 10cd39eacfec504458740e37ab82cb9a, type: 3}
+  TwinShot: 0

@@ -37,6 +37,7 @@ public class GunCard : ScriptableObject
     public GameObject Gun; //What the Gun Looks like in the Hands
     public BulletInstanitate BI; //BI Is Filled From the Firing Script
     public Sprite Icon;
+    public bool TwinShot = false;
 
 
     //RunTime variables that are editable by the code 
@@ -63,11 +64,27 @@ public class GunCard : ScriptableObject
         {
             if (WeaponType == WeaponTypes.Shotgun)
             {
-                BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets, SpreadAngleMax);
+                if (TwinShot == false)
+                {
+                    BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets, SpreadAngleMax);
+                }
+                else
+                {
+                    BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets * 2, SpreadAngleMax);
+                }
+                    
             }
             else if (WeaponType == WeaponTypes.Circular)
             {
-                BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets);
+                if (TwinShot == false)
+                {
+                    BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets);
+                }
+                else
+                {
+                    BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets * 2);
+                }
+                
             }
             else if (WeaponType == WeaponTypes.RocketLauncher)
             {
@@ -75,16 +92,24 @@ public class GunCard : ScriptableObject
             }
             else
             {
-                Debug.Log(RT_Damage.ToString());
-                if (Bullet != null)
+                if (TwinShot == false)
                 {
-                    BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                    Debug.Log(RT_Damage.ToString());
+                    if (Bullet != null)
+                    {
+                        BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                    }
+                }
+                else
+                {
+                    if (Bullet != null)
+                    {
+                        BI.ShootTwinShot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                    }
+                        
                 }
                 
-
-
-
-
+                
             }
             Timer = 0f;
         }

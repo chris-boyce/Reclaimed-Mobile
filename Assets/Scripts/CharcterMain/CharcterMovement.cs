@@ -11,6 +11,7 @@ public class CharcterMovement : MonoBehaviour
 
     private void Start()
     {
+        JoyconInput = (TouchInput)FindObjectOfType(typeof(TouchInput));
         RB = GetComponent<Rigidbody2D>();
     }
 

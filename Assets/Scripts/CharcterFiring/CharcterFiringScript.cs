@@ -9,6 +9,7 @@ public enum WeaponTypes {Rifle, Minigun ,Shotgun ,RocketLauncher, Circular, Turr
 
 public class CharcterFiringScript : MonoBehaviour
 {
+  
     //Get all classes
     [Header("Gun Classes")]
     public List<GunCard> GunList = new List<GunCard>() {null, null};
@@ -16,10 +17,14 @@ public class CharcterFiringScript : MonoBehaviour
     private AutoAimer AutoAimer;
     public Animator playerAnim;
 
+    
+
     public Image[] WeaponIcons;
 
     private void Start()
     {
+        WeaponIcons[0] = GameObject.Find("Weapon1").GetComponent<Image>();
+        WeaponIcons[1] = GameObject.Find("Weapon2").GetComponent<Image>();
         BI = GetComponent<BulletInstanitate>();
         AutoAimer = GetComponent<AutoAimer>();
 
@@ -50,9 +55,30 @@ public class CharcterFiringScript : MonoBehaviour
                 break;
             
         }
+    }
+    public void LoadGunFromSave2(GunValues Secondary)
+    {
+        switch (Secondary.SavedWeaponType)
+        {
+            case WeaponTypes.Rifle:
+                GunList[1] = Resources.Load<GunCard>("GunCards/Rifle");
+                break;
+            case WeaponTypes.Minigun:
+                GunList[1] = Resources.Load<GunCard>("GunCards/MiniGun");
+                break;
+            case WeaponTypes.Shotgun:
+                GunList[1] = Resources.Load<GunCard>("GunCards/Shotgun");
+                break;
+            case WeaponTypes.RocketLauncher:
+                GunList[1] = Resources.Load<GunCard>("GunCards/RocketLauncher");
+                break;
+            case WeaponTypes.Circular:
+                GunList[1] = Resources.Load<GunCard>("GunCards/Circular");
+                break;
+            case WeaponTypes.Turret:
+                break;
 
-
-
+        }
     }
     public void SetIcon()
     {
@@ -107,6 +133,12 @@ public class CharcterFiringScript : MonoBehaviour
     {
         GunList[0].UpgradeWeapon();
         GunList[1].UpgradeWeapon();
+
+    }
+    public void TwinShot()
+    {
+        GunList[0].TwinShot = true;
+        GunList[1].TwinShot = true;
 
     }
 

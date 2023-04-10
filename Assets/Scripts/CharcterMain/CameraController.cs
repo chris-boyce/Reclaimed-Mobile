@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        BoundingBox = GameObject.Find("BoundingBox").GetComponent<Transform>();
         cam = GetComponent<Camera>();
         layerMask = (LayerMask.GetMask("Obstacle"));
     }

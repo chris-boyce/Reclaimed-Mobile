@@ -12,17 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8844c267d9f1414c89743e1829c9982, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  SavedGunValues:
+    SavedWeaponType: 2
+    SavedDamage: 5
+    SavedFireRate: 2
+    SavedBulletVelocity: 5
   Name: Shotgun
   Description: Large Spread
   WeaponType: 2
-  Damage: 5
-  FireRate: 2
-  BulletVelocity: 5
-  Range: 5
+  Damage: 8
+  FireRate: 1.5
+  BulletVelocity: 10
+  Range: 7
   Penetration: 0
   AmountOfPellets: 5
-  SpreadAngleMax: 20
+  SpreadAngleMax: 25
   Bullet: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
   Gun: {fileID: 0}
   BI: {fileID: 0}
   Icon: {fileID: 21300000, guid: 514e0426936281f4fab07c655b097bab, type: 3}
+  TwinShot: 0
