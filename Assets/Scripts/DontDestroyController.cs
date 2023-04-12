@@ -10,6 +10,7 @@ public class DontDestroyController : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         Time.timeScale = 1.0f;
         SavePlayerStats[] others = FindObjectsOfType<SavePlayerStats>();
         if (others.Length > 0)
