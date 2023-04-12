@@ -12,20 +12,22 @@ public class BulletInstanitate : MonoBehaviour
         Firepoint1 = transform.Find("FirePoint1");
         Firepoint2 = transform.Find("FirePoint2");
     }
-    public void Shoot(GameObject Projectile, float Damage , float Range , float BulletVelocity, bool Penetration)
+    public void Shoot(GameObject Projectile, float Damage , float Range , float BulletVelocity, bool Penetration, BulletMovement.BulletTypes BulletType)
     {
         GameObject TempBullet = Instantiate(Projectile, Firepoint1.position, Firepoint1.rotation); //Spawns and give bullet stats
         BulletMovement TempBulletMovementScript = TempBullet.GetComponent<BulletMovement>();
+        TempBulletMovementScript.BulletType = BulletType;
         TempBulletMovementScript.Damage = Damage;
         TempBulletMovementScript.Range = Range;
         TempBulletMovementScript.BulletVelocity = BulletVelocity;
         TempBulletMovementScript.Penetration = Penetration;
     }
 
-    public void ShootTwinShot(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration)
+    public void ShootTwinShot(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration, BulletMovement.BulletTypes BulletType)
     {
         GameObject TempBullet = Instantiate(Projectile, Firepoint1.position, Firepoint1.rotation); //Spawns and give bullet stats
         BulletMovement TempBulletMovementScript = TempBullet.GetComponent<BulletMovement>();
+        TempBulletMovementScript.BulletType = BulletType;
         TempBulletMovementScript.Damage = Damage;
         TempBulletMovementScript.Range = Range;
         TempBulletMovementScript.BulletVelocity = BulletVelocity;
@@ -33,13 +35,14 @@ public class BulletInstanitate : MonoBehaviour
 
         GameObject TempBullet1 = Instantiate(Projectile, Firepoint2.position, Firepoint2.rotation); //Spawns and give bullet stats
         BulletMovement TempBulletMovementScript1 = TempBullet1.GetComponent<BulletMovement>();
+        TempBulletMovementScript.BulletType = BulletType;
         TempBulletMovementScript1.Damage = Damage;
         TempBulletMovementScript1.Range = Range;
         TempBulletMovementScript1.BulletVelocity = BulletVelocity;
         TempBulletMovementScript1.Penetration = Penetration;
     }
 
-    public void ShootShotgun(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration, int AmountofPellets, float SpreadAngleMax)
+    public void ShootShotgun(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration, int AmountofPellets, float SpreadAngleMax, BulletMovement.BulletTypes BulletType)
     {
         for (int i = 0; i < AmountofPellets; i++)
         {
@@ -47,6 +50,7 @@ public class BulletInstanitate : MonoBehaviour
 
             GameObject TempBullet = Instantiate(Projectile, transform.position, ShotgunRot); //Spawns and give bullet stats
             BulletMovement TempBulletMovementScript = TempBullet.GetComponent<BulletMovement>();
+            TempBulletMovementScript.BulletType = BulletType;
             TempBulletMovementScript.Damage = Damage;
             TempBulletMovementScript.Range = Range;
             TempBulletMovementScript.BulletVelocity = BulletVelocity;
@@ -54,7 +58,7 @@ public class BulletInstanitate : MonoBehaviour
         }
 
     }
-    public void ShootCircular(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration, int AmountofPellets)
+    public void ShootCircular(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration, int AmountofPellets, BulletMovement.BulletTypes BulletType)
     {
         float CurrentAngle = 0;
         float IntervalOfAngle = 360 / AmountofPellets;
@@ -65,6 +69,7 @@ public class BulletInstanitate : MonoBehaviour
             CurrentAngle = CurrentAngle + IntervalOfAngle;
             GameObject TempBullet = Instantiate(Projectile, transform.position, AngleOfShot); //Spawns and give bullet stats
             BulletMovement TempBulletMovementScript = TempBullet.GetComponent<BulletMovement>();
+            TempBulletMovementScript.BulletType = BulletType;
             TempBulletMovementScript.Damage = Damage;
             TempBulletMovementScript.Range = Range;
             TempBulletMovementScript.BulletVelocity = BulletVelocity;
@@ -72,7 +77,7 @@ public class BulletInstanitate : MonoBehaviour
         }
 
     }
-    public void ShootRocket(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration)
+    public void ShootRocket(GameObject Projectile, float Damage, float Range, float BulletVelocity, bool Penetration, BulletMovement.BulletTypes BulletType)
     {
         GameObject TempBullet = Instantiate(Projectile, transform.position, transform.rotation); //Spawns and give bullet stats
         RocketMovement TempBulletMovementScript = TempBullet.GetComponent<RocketMovement>();

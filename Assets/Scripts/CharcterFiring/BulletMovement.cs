@@ -6,25 +6,52 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
+
+    public enum BulletTypes { Default, Wiggle };
+    public BulletTypes BulletType;
     public float BulletVelocity = 0f;
     public float Damage = 0f;
     public float Range = 0f;
     public bool Penetration = false;
-    private Vector3 SpawnPos;
+    private Vector2 SpawnPos;
     private float Distence;
     public string TargetsTag = "Enemy"; //Allows the bullet to check the target
     public GameObject BloodSplater;
 
     public Vector2 Collpoint;
+
+    public float speed = 5f;
+    public Vector2 startPosition;
+    public Vector2 direction;
+    public float time;
+    public Vector2 crossDirection;
+    public float frequency;
+    public float amplitude;
     private void Start()
     {
         SpawnPos = transform.position;
-        
-    
+        time = 0.0f;
+        direction = transform.right;
+        crossDirection = new Vector2(direction.y, -direction.x); // A quick right angle for 2D
+        startPosition = transform.position;
+
+
     }
     void Update()
     {
-        transform.position += transform.right * Time.deltaTime * BulletVelocity; //Bullet Velo
+        switch (BulletType)
+        {
+            case BulletTypes.Default:
+                transform.position += transform.right * Time.deltaTime * BulletVelocity; //Bullet Velo
+                break;
+            case BulletTypes.Wiggle:
+                transform.position = startPosition + (direction * speed * time) + (crossDirection * Mathf.Sin(time * frequency) * amplitude);
+                time += Time.deltaTime;
+                break;
+        }
+        
+        
+
         Distence = Vector3.Distance(SpawnPos, transform.position); //Distence Calc
         if(Distence > Range) //Range check 
         {

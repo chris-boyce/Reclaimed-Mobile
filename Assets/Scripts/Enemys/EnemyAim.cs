@@ -12,9 +12,12 @@ public class EnemyAim : MonoBehaviour
     public float Firerate = 0.5f;
     private float Timer = 0;
 
+    public BulletMovement.BulletTypes BulletType;
+
     private void Start()
     {
         EnemyBI = GetComponent<BulletInstanitate>();    
+
     }
     public void AimAtPlayerLocation(Transform PlayerPos)
     {
@@ -22,7 +25,7 @@ public class EnemyAim : MonoBehaviour
         Timer = Timer + Time.deltaTime;
         if(Timer >= Firerate)
         {
-            EnemyBI.Shoot(Projectile, Damage, Range, BulletVelo, false); //Give values to shoot
+            EnemyBI.Shoot(Projectile, Damage, Range, BulletVelo, false, BulletType); //Give values to shoot
             Timer = 0f;
         }
 

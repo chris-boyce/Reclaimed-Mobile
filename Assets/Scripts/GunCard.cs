@@ -23,6 +23,7 @@ public class GunCard : ScriptableObject
     public string Name;
     public string Description;
     public WeaponTypes WeaponType;
+    public BulletMovement.BulletTypes BulletMovementType;
 
     [Header("Gun Stats")] //Stats Set in Editor cannot be edited in code becasue wouldnt reset as it is a Scriptable Object
     public float Damage;
@@ -68,11 +69,11 @@ public class GunCard : ScriptableObject
             {
                 if (TwinShot == false)
                 {
-                    BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets, SpreadAngleMax);
+                    BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets, SpreadAngleMax, BulletMovementType);
                 }
                 else
                 {
-                    BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets * 2, SpreadAngleMax);
+                    BI.ShootShotgun(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets * 2, SpreadAngleMax, BulletMovementType);
                 }
                     
             }
@@ -80,17 +81,17 @@ public class GunCard : ScriptableObject
             {
                 if (TwinShot == false)
                 {
-                    BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets);
+                    BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets, BulletMovementType);
                 }
                 else
                 {
-                    BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets * 2);
+                    BI.ShootCircular(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, AmountOfPellets * 2, BulletMovementType);
                 }
                 
             }
             else if (WeaponType == WeaponTypes.RocketLauncher)
             {
-                BI.ShootRocket(Bullet, RT_Damage,RT_Range,RT_BulletVelocity,Penetration);
+                BI.ShootRocket(Bullet, RT_Damage,RT_Range,RT_BulletVelocity,Penetration, BulletMovementType);
             }
             else
             {
@@ -99,14 +100,14 @@ public class GunCard : ScriptableObject
                     Debug.Log(RT_Damage.ToString());
                     if (Bullet != null)
                     {
-                        BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                        BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, BulletMovementType);
                     }
                 }
                 else
                 {
                     if (Bullet != null)
                     {
-                        BI.ShootTwinShot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration);
+                        BI.ShootTwinShot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, BulletMovementType);
                     }
                         
                 }

@@ -15,11 +15,6 @@ public class CircularGunClass : GunClass
     }
     public override void Shoot()
     {
-        Timer = Timer + Time.deltaTime;
-        if (Timer > Firerate)
-        {
-            BI.ShootCircular(Bullet, Damage, Range, BulletVelocity, Penetration, AmountofPellets);
-            Timer = 0f;
-        }
+        
     }
 }

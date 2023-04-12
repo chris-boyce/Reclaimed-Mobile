@@ -26,7 +26,7 @@ public class GunClass : MonoBehaviour
         if (Timer > Firerate)
         {
             Debug.Log("Class Shooting");
-            BI.Shoot(Bullet, Damage, Range, BulletVelocity, Penetration);
+            BI.Shoot(Bullet, Damage, Range, BulletVelocity, Penetration, BulletMovement.BulletTypes.Default);
             Timer = 0f;
         }
     }
