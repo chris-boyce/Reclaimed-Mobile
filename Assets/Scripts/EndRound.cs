@@ -14,7 +14,7 @@ public class EndRound : MonoBehaviour
     private void Start()
     {
         LoadScene = GetComponent<LoadScene>();  
-        InvokeRepeating("CheckEnemies", 1.0f, 5f);
+        InvokeRepeating("CheckEnemies", 20.0f, 5f);
         SaveStats = GameObject.FindWithTag("SaveStat").GetComponent<SavePlayerStats>();
     }
     void CheckEnemies()
@@ -29,6 +29,7 @@ public class EndRound : MonoBehaviour
             GameEnded = true;
         }
     }
+  
 
 
 }

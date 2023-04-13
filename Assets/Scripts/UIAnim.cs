@@ -74,7 +74,7 @@ public class UIAnim : MonoBehaviour
     {
         if (isBackground) 
         {
-            BackgroundScale();
+            //BackgroundScale();
             BackgroundScroll();
             
         }
@@ -117,7 +117,8 @@ public class UIAnim : MonoBehaviour
 
     void RunAnim()
     {
-
+       
+        LeanTween.moveY(gameObject, EndPos.y, SpeedOfAnim).setEase(Curve);
     }
 
  

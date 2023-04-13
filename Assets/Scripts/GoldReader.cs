@@ -11,6 +11,10 @@ public class GoldReader : MonoBehaviour
         SaveStats = GameObject.FindGameObjectWithTag("SaveStat").GetComponent<SavePlayerStats>();
     }
 
+    public void AddGold(int Amount)
+    {
+        PlayerPrefs.SetInt("SavedGold", PlayerPrefs.GetInt("SavedGold") + Amount);
+    }
     void Update()
     {
         GetComponent<TextMeshProUGUI>().text = "Players Gold : " + PlayerPrefs.GetInt("SavedGold").ToString();

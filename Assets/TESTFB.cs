@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,11 +18,26 @@ public class TESTFB : MonoBehaviour
         if (!FB.IsInitialized)
         {
             FB.Init(InitCallback, OnHideUnity);
+            if (FB.IsLoggedIn)
+            {
+                FB.Mobile.RefreshCurrentAccessToken();
+                DealWithFbMenus(FB.IsLoggedIn);
+            }
         }
         else
         {
             FB.ActivateApp();
         }
+    }
+
+    void Start()
+    {
+        if (FB.IsLoggedIn)
+        {
+            FB.Mobile.RefreshCurrentAccessToken();
+            DealWithFbMenus(FB.IsLoggedIn);
+        }
+        
     }
     private void InitCallback()
     {
