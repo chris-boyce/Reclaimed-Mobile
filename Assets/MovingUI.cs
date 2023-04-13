@@ -9,16 +9,18 @@ public class MovingUI : MonoBehaviour
     public float Amp;
     public float Feq;
     public bool Clamped;
+    public float ClampX;
+    public float ClampY;
     void Update()
     {
         if (Clamped)
         {
             float x = Mathf.Sin(Time.time / Feq) + Amp;
-            float xS = Mathf.Clamp(x, 1f, 1.5f);
+            float xS = Mathf.Clamp(x, ClampX, ClampY);
             float y = Mathf.Sin(Time.time / Feq) + Amp;
-            float yS = Mathf.Clamp(y, 1f, 1.5f);
+            float yS = Mathf.Clamp(y, ClampX, ClampY);
             float z = Mathf.Sin(Time.time / Feq) + Amp;
-            float zS = Mathf.Clamp(z, 1f, 1.5f);
+            float zS = Mathf.Clamp(z, ClampX, ClampY);
             Vector3 vec = new Vector3(xS, yS, zS);
 
             transform.localScale = vec;

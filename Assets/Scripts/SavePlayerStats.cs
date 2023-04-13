@@ -26,6 +26,7 @@ public class SavePlayerStats : MonoBehaviour
         LevelDictionary.Add(2,7);
         LevelDictionary.Add(3,9);
         LevelDictionary.Add(4, 10);
+        LevelDictionary.Add(5, 25);
 
 
 

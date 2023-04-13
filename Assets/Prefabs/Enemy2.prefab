@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73dde638b0dcc3459b95b25e23821a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 50
   DamageTMP: {fileID: 802500032049000903}
   XP: 20
 --- !u!114 &8119546620617839228
@@ -460,9 +461,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
   Damage: 5
-  Range: 7
+  Range: 10
   BulletVelo: 10
-  Firerate: 1
+  Firerate: 2
+  BulletType: 0
 --- !u!114 &8034069216020140445
 MonoBehaviour:
   m_ObjectHideFlags: 0

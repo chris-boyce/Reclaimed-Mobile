@@ -1202,9 +1202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ba59d10e8f7634d9127667dd38762f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amp: 0.5
+  Amp: 1
   Feq: 0.7
   Clamped: 1
+  ClampX: 0.63
+  ClampY: 0.75
 --- !u!1 &1034903376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,6 +2384,8 @@ MonoBehaviour:
   Amp: 2.5
   Feq: 0.5
   Clamped: 0
+  ClampX: 0
+  ClampY: 0
 --- !u!1 &1679995609
 GameObject:
   m_ObjectHideFlags: 0

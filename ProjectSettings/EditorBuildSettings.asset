@@ -80,4 +80,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DailyEvent.unity
     guid: 55a444b32f425a54c9b06d1637922f2c
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 412110bada8583e45b743048907ca224
   m_configObjects: {}

@@ -11,6 +11,9 @@ public class EnemyChaseScript : MonoBehaviour
     public float NextWaypointDistence = 1f;
     public float EnemyRange = 1f;
 
+    public bool isBoss;
+    public BossAim BossAim;
+
     Path CurrentPath;
     int CurrentWaypoint = 0;
 
@@ -73,10 +76,18 @@ public class EnemyChaseScript : MonoBehaviour
             Seeker.StartPath(RB.position, RB.position, OnPathComplete);//Stop moving and shoot
             EnemyAim.AimAtPlayerLocation(Target);
 
-
-
-
             //CanAttack
+        }
+
+        if (DistenceFromTarget < 5)
+        {
+            if (isBoss)
+            {
+                Seeker.StartPath(RB.position, RB.position, OnPathComplete);//Stop moving and shoot
+                BossAim.FireCircle();
+            }
+            
+
         }
 
     }

@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour , IDamageable<float>
 {
-    private float Health = 50f;
+    public float Health = 50f;
     public TextMeshProUGUI DamageTMP;
     public float XP;
 
@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour , IDamageable<float>
     {
         //Debug.Log(gameObject.name + "Has Taken : " + DamageTaken + "And Has HP: " + Health);
         Health = Health - DamageTaken;
-        StartCoroutine(DamageText(DamageTaken));
+        //StartCoroutine(DamageText(DamageTaken));
         if(Health < 0)
         {
             EnemyDeath();

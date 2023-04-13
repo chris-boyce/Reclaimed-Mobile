@@ -12,8 +12,12 @@ public class SoundController : MonoBehaviour
     }
     static public void PlaySound(AudioClip Sound)
     {
-        AudioController[0].volume = PlayerPrefs.GetFloat("SFXVolume");
-        AudioController[0].PlayOneShot(Sound, PlayerPrefs.GetFloat("SFXVolume"));
+        if (AudioController[0])
+        {
+            AudioController[0].volume = PlayerPrefs.GetFloat("SFXVolume");
+            AudioController[0].PlayOneShot(Sound, PlayerPrefs.GetFloat("SFXVolume"));
+        }
+        
     }
     static public void PlayMusic(AudioClip Sound)
     {
