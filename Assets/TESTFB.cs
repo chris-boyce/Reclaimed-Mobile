@@ -15,6 +15,7 @@ public class TESTFB : MonoBehaviour
 
     void Awake()
     {
+        FB_userName.text = "Guest:" + PlayerPrefs.GetString("PlayerID");
         if (!FB.IsInitialized)
         {
             FB.Init(InitCallback, OnHideUnity);

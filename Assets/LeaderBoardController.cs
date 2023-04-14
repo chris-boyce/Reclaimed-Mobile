@@ -8,13 +8,13 @@ using TMPro;
 
 public class LeaderBoardController : MonoBehaviour
 {
-    public InputField MemberID, PlayerScore;
-    public int ID;
     public string Name;
-    public TMP_Text Player1;
+    public GameObject ScoreboardItem;
+    public GameObject GridHolder;
 
     void Start()
     {
+        
         LootLockerSDKManager.StartGuestSession((response) =>
         {
             if (!response.success)
@@ -23,38 +23,45 @@ public class LeaderBoardController : MonoBehaviour
 
                 return;
             }
-
             Debug.Log("successfully started LootLocker session");
+            RequestLeaderBoard();
         });
-        FB.API("/me?fields=first_name", HttpMethod.GET, DisplayUsername);
     }
     public void SubmitScores()
     {
-        int leaderboardID = 13363;
+        FB.API("/me?fields=first_name", HttpMethod.GET, DisplayUsername);
         
-
-        LootLockerSDKManager.SubmitScore(Name, PlayerPrefs.GetInt("SavedLevel"), leaderboardID, (response) =>
-        {
-            if (response.statusCode == 200)
-            {
-                Debug.Log("Successful");
-            }
-            else
-            {
-                Debug.Log("failed: " + response.Error);
-            }
-        });
     }
     void DisplayUsername(IResult result)
     {
         if (result.Error == null)
         {
             Name = "" + result.ResultDictionary["first_name"];
+            
+            Debug.Log("Done");
         }
         else
         {
+            Debug.Log("No");
             Debug.Log(result.Error);
         }
+        int leaderboardID = 13363;
+        if (Name == "")
+        {
+            Name = PlayerPrefs.GetString("PlayerID");
+        }
+        LootLockerSDKManager.SubmitScore(Name, PlayerPrefs.GetInt("SavedPlayerLevel"), leaderboardID, (response) =>
+        {
+            if (response.statusCode == 200)
+            {
+                Debug.Log("Successful1");
+            }
+            else
+            {
+                Debug.Log("failed: " + response.Error);
+            }
+        });
+
     }
 
     public void RequestLeaderBoard()
@@ -70,7 +77,15 @@ public class LeaderBoardController : MonoBehaviour
                 LootLockerLeaderboardMember[] Scores = response.items;
                 Debug.Log(Scores[0].member_id);
                 Debug.Log(Scores[0].score);
-                Player1.text = Scores[0].member_id + " : " + Scores[0].score;
+                for (int i = 0; i < response.items.Length; i++)
+                {
+                    var obj = Instantiate(ScoreboardItem, new Vector3(0, 0, 0), Quaternion.identity);
+                   
+                    obj.transform.SetParent(GridHolder.transform);
+                    obj.GetComponentInChildren<TMP_Text>().text =
+                        response.items[i].member_id + " : " + response.items[i].score;
+                }
+                  
 
             }
             else

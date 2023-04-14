@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 2514294018070231953}
   - component: {fileID: 8041940446024285455}
   - component: {fileID: 8478899620754290568}
+  - component: {fileID: -3442639720466713398}
+  - component: {fileID: 398766663392275233}
+  - component: {fileID: 8057423081478154686}
   m_Layer: 0
   m_Name: SaveStats
   m_TagString: SaveStat
@@ -55,6 +58,7 @@ MonoBehaviour:
   SavedLevel: 0
   SavedGold: 0
   SavedPurchasedItemsID: 
+  UserName: 
   Player: {fileID: 0}
 --- !u!114 &2514294018070231953
 MonoBehaviour:
@@ -260,3 +264,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &-3442639720466713398
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015505996837990609}
+  m_Enabled: 1
+--- !u!114 &398766663392275233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015505996837990609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &8057423081478154686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015505996837990609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0

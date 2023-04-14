@@ -18,6 +18,7 @@ public class UIAnim : MonoBehaviour
     public float SpeedOfAnim = 2f;
     private float ScaleBackground;
     private RectTransform RT;
+    public bool DeactiveOnScrollOut;
     
     LoadScene loadScene;
     
@@ -72,15 +73,21 @@ public class UIAnim : MonoBehaviour
 
     void Start()
     {
-        if (isBackground) 
+        StartUp();
+    }
+
+    public void StartUp()
+    {
+        Debug.Log("Running Start");
+        if (isBackground)
         {
             //BackgroundScale();
             BackgroundScroll();
-            
+
         }
-        else 
-        { 
-            RunAnim(); 
+        else
+        {
+            RunAnim();
         }
     }
     void BackgroundScale()
@@ -110,6 +117,11 @@ public class UIAnim : MonoBehaviour
             loadScene = GetComponentInChildren<LoadScene>();
             loadScene.OnSceneDeloadAdditive(UnloadIndex);
 
+        }
+
+        if (DeactiveOnScrollOut)
+        {
+            gameObject.SetActive(false);
         }
         
     }

@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using static UnityEngine.GraphicsBuffer;
+
 
 public class SavePlayerStats : MonoBehaviour
 {
@@ -17,7 +17,8 @@ public class SavePlayerStats : MonoBehaviour
     public int SavedGold;
     public List<int> SavedPurchasedItemsID = new List<int>();
     public Dictionary<int, int> LevelDictionary = new Dictionary<int, int>();
-
+    const string glyphs = "abcdefghijklmnopqrstuvwxyz0123456789";
+    public string UserName;
 
     public GameObject Player;
     private void Start()
@@ -28,6 +29,21 @@ public class SavePlayerStats : MonoBehaviour
         LevelDictionary.Add(4, 10);
         LevelDictionary.Add(5, 25);
 
+        if (PlayerPrefs.GetString("PlayerID") == "")
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                UserName += glyphs[UnityEngine.Random.Range(0, glyphs.Length)];
+            }
+            PlayerPrefs.SetString("PlayerID", UserName);
+        }
+        else
+        {
+            UserName = PlayerPrefs.GetString("PlayerID");
+        }
+        
+
+        
 
 
         SavedGold = 30;
