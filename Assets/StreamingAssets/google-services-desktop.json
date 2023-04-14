@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "4065420377",
+    "project_id": "reclaimed-6f2ec",
+    "storage_bucket": "reclaimed-6f2ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4065420377:android:67278ff2ee02b205aafd48",
+        "android_client_info": {
+          "package_name": "com.ChrisBoyce.Reclaimed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4065420377-iibrupq3l74mn0chafldqj6pc7nl9riv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx1od_Ie4tEfci4N_wahMyY9SxJjNw6vI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4065420377-iibrupq3l74mn0chafldqj6pc7nl9riv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
