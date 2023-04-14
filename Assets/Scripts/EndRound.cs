@@ -22,7 +22,11 @@ public class EndRound : MonoBehaviour
         EnemiesAlive = GameObject.FindGameObjectsWithTag("Enemy");
         if (EnemiesAlive.Length == 0 && GameEnded == false)//Checks for enemies alive 
         {
-            PlayerPrefs.SetInt("SavedPlayerLevel", LevelNum);
+            if(PlayerPrefs.GetInt("SavedPlayerLevel") < LevelNum)
+            {
+                PlayerPrefs.SetInt("SavedPlayerLevel", LevelNum);
+            }
+            
             Debug.Log("Should Have Ended");
             SaveStats.SaveStats();
             LoadScene.OnSceneLoadAdditive();//Loads new scene
