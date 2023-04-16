@@ -47,8 +47,8 @@ public class GunCard : ScriptableObject
     private float RT_Damage;
     private float RT_FireRate;  
     private float RT_BulletVelocity;    
-    private float RT_Range; 
-
+    private float RT_Range;
+    private GameObject[] AllBullets;
 
     private void OnEnable()
     {

@@ -10,15 +10,9 @@ public class LevelSelector : MonoBehaviour
     void Start()
     {
         SavePlayerStats Save = GameObject.FindGameObjectWithTag("SaveStat").GetComponent<SavePlayerStats>();
-        currentlevel = PlayerPrefs.GetInt("SavedPlayerLevel");
-        output = Save.LevelDictionary[PlayerPrefs.GetInt("SavedPlayerLevel") + 1];
+        currentlevel = PlayerPrefs.GetInt("LastLevelPlayed");
+        output = Save.LevelDictionary[PlayerPrefs.GetInt("LastLevelPlayed") + 1];
         ls.LoadingSceneIndex = output;
-
-
-
-
-
-
     }
 
 

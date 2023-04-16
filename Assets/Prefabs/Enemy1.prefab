@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73dde638b0dcc3459b95b25e23821a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 50
   DamageTMP: {fileID: 7251503820800697789}
   XP: 10
 --- !u!114 &4928329177254508543
@@ -290,6 +291,8 @@ MonoBehaviour:
   Speed: 500
   NextWaypointDistence: 1
   EnemyRange: 5
+  isBoss: 0
+  BossAim: {fileID: 0}
 --- !u!114 &2289484596170715655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +338,7 @@ MonoBehaviour:
   Range: 2
   BulletVelo: 8
   Firerate: 0.3
+  BulletType: 0
 --- !u!114 &1827063742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +353,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firepoint1: {fileID: 0}
   Firepoint2: {fileID: 0}
+  BulletID: 0
+  Bullets: {fileID: 0}
+  isEnemy: 1
 --- !u!58 &673771407371263393
 CircleCollider2D:
   m_ObjectHideFlags: 0

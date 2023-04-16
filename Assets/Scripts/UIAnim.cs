@@ -83,7 +83,6 @@ public class UIAnim : MonoBehaviour
         {
             //BackgroundScale();
             BackgroundScroll();
-
         }
         else
         {
@@ -96,14 +95,12 @@ public class UIAnim : MonoBehaviour
         ScaleBackground = RT.sizeDelta.x / Screen.width;
         ScaleBackground += 0.1f;
         RT.sizeDelta = new Vector2(RT.sizeDelta.x * ScaleBackground, RT.sizeDelta.y * ScaleBackground);
-
     }
 
     void BackgroundScroll()
     {
         transform.position = new Vector3(Screen.width / 2, Screen.height - Screen.height * 1.75f, 0);
         LeanTween.moveY(gameObject, Screen.height / 2, SpeedOfAnim).setEase(Curve);
-
     }    
     public void BackgroundScrollOut()
     {
@@ -118,18 +115,15 @@ public class UIAnim : MonoBehaviour
             loadScene.OnSceneDeloadAdditive(UnloadIndex);
 
         }
-
         if (DeactiveOnScrollOut)
         {
             gameObject.SetActive(false);
         }
-        
     }
 
 
     void RunAnim()
     {
-       
         LeanTween.moveY(gameObject, EndPos.y, SpeedOfAnim).setEase(Curve);
     }
 

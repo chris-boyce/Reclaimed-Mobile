@@ -20,6 +20,7 @@ MonoBehaviour:
   Name: Minigun
   Description: BRBBRBRBRBRB
   WeaponType: 1
+  BulletMovementType: 0
   Damage: 3
   FireRate: 0.2
   BulletVelocity: 15

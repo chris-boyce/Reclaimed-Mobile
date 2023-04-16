@@ -289,6 +289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firepoint1: {fileID: 0}
   Firepoint2: {fileID: 0}
+  BulletID: 0
+  Bullets: {fileID: 0}
+  isEnemy: 1
 --- !u!58 &3920639783847720278
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -318,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
+  period: 0.1
 --- !u!1 &7365310815510605873
 GameObject:
   m_ObjectHideFlags: 0

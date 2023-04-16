@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
-
     public enum BulletTypes { Default, Wiggle };
     public BulletTypes BulletType;
     public float BulletVelocity = 0f;
@@ -27,15 +26,14 @@ public class BulletMovement : MonoBehaviour
     public Vector2 crossDirection;
     public float frequency;
     public float amplitude;
-    private void Start()
+
+    public void OnEnable()
     {
         SpawnPos = transform.position;
         time = 0.0f;
         direction = transform.right;
         crossDirection = new Vector2(direction.y, -direction.x); // A quick right angle for 2D
         startPosition = transform.position;
-
-
     }
     void Update()
     {
@@ -55,7 +53,7 @@ public class BulletMovement : MonoBehaviour
         Distence = Vector3.Distance(SpawnPos, transform.position); //Distence Calc
         if(Distence > Range) //Range check 
         {
-            Destroy(gameObject); //Destroy the bullet
+            gameObject.SetActive(false); //Destroy the bullet
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,14 +62,15 @@ public class BulletMovement : MonoBehaviour
         {
             IDamageable <float> Hit = collision.GetComponent<IDamageable<float>>(); //Uses the interface system to find the interface on anything that is damageable
             Hit.Damage(Damage); //Applys the damage through the interface system
-
             Vector2 closestPoint = collision.ClosestPoint(Collpoint);
-            BloodSplater = Resources.Load<GameObject>("Blood");
-            GameObject bloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
-            bloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
-            Destroy(gameObject);
-       
-            //TODO CHECK FOR PENITION 
+            if (PlayerPrefs.GetInt("BloodEnable") != 0)
+            {
+                BloodSplater = Resources.Load<GameObject>("Blood");
+                GameObject bloodSplater = Instantiate(BloodSplater, closestPoint, Quaternion.identity);
+                bloodSplater.GetComponent<BloodSplatter>().BloodSplater(closestPoint);
+            }
+            gameObject.SetActive(false);
+
         }
     }
 }

@@ -13,11 +13,11 @@ public class ShopController : MonoBehaviour
     void Start()
     {
         savedPlayerStats = GameObject.FindGameObjectWithTag("SaveStat").GetComponent<SavePlayerStats>();
-        ShopUI = GameObject.FindGameObjectsWithTag("ShopItemUI");
         for (int i = 0; i < ShopUI.Length; i++)
         {
             ShopUI[i].transform.Find("Image").GetComponent<Image>().sprite = ShopItems[i].ItemImage;
             ShopUI[i].transform.Find("ShopText").GetComponent<TextMeshProUGUI>().text = ShopItems[i].Price.ToString() + " Gold";
+            ShopUI[i].transform.Find("Name").GetComponent<TextMeshProUGUI>().text = ShopItems[i].ItemName;
         }
 
         for (int i = 0; i < ShopItems.Length; i++)
@@ -58,13 +58,15 @@ public struct ShopItem
     public bool IsPurchased;
     public int Price;
     public bool IsEquipped;
+    public int ItemID;
 
-    public ShopItem(string Name,Sprite Image, bool Purchased, int price, bool Equipped)
+    public ShopItem(string Name,Sprite Image, bool Purchased, int price, bool Equipped, int ID)
     {
         this.ItemName = Name;
         this.ItemImage = Image;
         this.IsPurchased = Purchased;
         this.Price = price;
         this.IsEquipped = Equipped;
+        this.ItemID = ID;
     }
 }

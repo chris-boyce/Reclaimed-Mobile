@@ -20,6 +20,7 @@ MonoBehaviour:
   Name: Rifle
   Description: I am a Rifle
   WeaponType: 0
+  BulletMovementType: 0
   Damage: 4
   FireRate: 0.5
   BulletVelocity: 5
@@ -32,4 +33,4 @@ MonoBehaviour:
   Gun: {fileID: 0}
   BI: {fileID: 0}
   Icon: {fileID: 21300000, guid: d04036086a8db32468338a8424df933d, type: 3}
-  TwinShot: 0
+  TwinShot: 1

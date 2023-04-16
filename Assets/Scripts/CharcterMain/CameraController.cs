@@ -59,7 +59,6 @@ public class CameraController : MonoBehaviour
             if (hit.collider.tag == "Wall")
             {
                 Debug.DrawRay(BoundingBox.position, hit.point, Color.blue);
-                Debug.Log(hit.collider.name);
                 return true;
             }
             return false;

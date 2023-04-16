@@ -11,9 +11,11 @@ public class VolumeController : MonoBehaviour
     public float SFXVolume;
     public float MusicVolume;
     public bool BloodEnable;
+    public bool HapticEnable;
     public Slider SFXSlider;
     public Slider MusicSlider;
     public Toggle BloodToggle;
+    public Toggle HapticToggle;
 
     public AudioClip Music;
 
@@ -23,6 +25,17 @@ public class VolumeController : MonoBehaviour
         MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
         SFXSlider.value = SFXVolume;
         MusicSlider.value = MusicVolume;
+        if (PlayerPrefs.GetInt("HapticEnable") == 0)
+        {
+            HapticEnable = false;
+            HapticToggle.isOn = false;
+        }
+        else
+        {
+            HapticEnable = true;
+            HapticToggle.isOn = true;
+        }
+
         if (PlayerPrefs.GetInt("BloodEnable") == 0)
         {
             BloodEnable = false;
@@ -36,6 +49,7 @@ public class VolumeController : MonoBehaviour
         SFXSlider.onValueChanged.AddListener(delegate { SFXValueChangeCheck(); });
         MusicSlider.onValueChanged.AddListener(delegate { MusicValueChangeCheck(); });
         BloodToggle.onValueChanged.AddListener(delegate { BloodValueChangeCheck(); });
+        HapticToggle.onValueChanged.AddListener(delegate { HapticValueChangeCheck(); });
     }
     public void SFXValueChangeCheck()
     {
@@ -60,6 +74,20 @@ public class VolumeController : MonoBehaviour
             PlayerPrefs.SetInt("BloodEnable", 10);
         }
         
+    }
+    public void HapticValueChangeCheck()
+    {
+        if (HapticEnable == true)
+        {
+            HapticEnable = false;
+            PlayerPrefs.SetInt("HapticEnable", 0);
+        }
+        else
+        {
+            HapticEnable = true;
+            PlayerPrefs.SetInt("HapticEnable", 10);
+        }
+
     }
 
 

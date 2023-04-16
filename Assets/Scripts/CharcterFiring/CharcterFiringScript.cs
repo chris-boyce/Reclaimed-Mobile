@@ -17,8 +17,6 @@ public class CharcterFiringScript : MonoBehaviour
     private AutoAimer AutoAimer;
     public Animator playerAnim;
 
-    
-
     public Image[] WeaponIcons;
 
     private void Start()

@@ -419,6 +419,8 @@ MonoBehaviour:
   Speed: 50
   NextWaypointDistence: 3
   EnemyRange: 10
+  isBoss: 0
+  BossAim: {fileID: 0}
 --- !u!114 &635827769456856955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +481,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firepoint1: {fileID: 0}
   Firepoint2: {fileID: 0}
+  BulletID: 0
+  Bullets: {fileID: 0}
+  isEnemy: 1
 --- !u!1001 &8870313413946596761
 PrefabInstance:
   m_ObjectHideFlags: 0

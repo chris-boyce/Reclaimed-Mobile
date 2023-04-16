@@ -20,6 +20,7 @@ MonoBehaviour:
   Name: Circular Shoot
   Description: Protect Yourself
   WeaponType: 4
+  BulletMovementType: 0
   Damage: 5
   FireRate: 1
   BulletVelocity: 10

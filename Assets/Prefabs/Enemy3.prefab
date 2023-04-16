@@ -547,6 +547,8 @@ MonoBehaviour:
   Speed: 300
   NextWaypointDistence: 3
   EnemyRange: 7
+  isBoss: 0
+  BossAim: {fileID: 0}
 --- !u!114 &635827769456856955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firepoint1: {fileID: 0}
   Firepoint2: {fileID: 0}
+  BulletID: 0
+  Bullets: {fileID: 0}
+  isEnemy: 1
 --- !u!1 &8660048724825678001
 GameObject:
   m_ObjectHideFlags: 0

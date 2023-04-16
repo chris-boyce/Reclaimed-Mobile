@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 444873915}
   - component: {fileID: 444873914}
   m_Layer: 5
-  m_Name: Level 1 button (3)
+  m_Name: 3
   m_TagString: ItemUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 455141314}
   - component: {fileID: 455141313}
   m_Layer: 5
-  m_Name: Level 1 button (4)
+  m_Name: 4
   m_TagString: ItemUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1474,7 +1474,7 @@ GameObject:
   - component: {fileID: 692454317}
   - component: {fileID: 692454316}
   m_Layer: 5
-  m_Name: Level 1 button (2)
+  m_Name: 2
   m_TagString: ItemUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2499,6 +2499,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentlevel: 0
+  currentLevelsGameObject:
+  - {fileID: 1927921006}
+  - {fileID: 1849940840}
+  - {fileID: 692454314}
+  - {fileID: 444873912}
+  - {fileID: 455141311}
 --- !u!4 &1746000313
 Transform:
   m_ObjectHideFlags: 0
@@ -2604,7 +2610,7 @@ GameObject:
   - component: {fileID: 1849940843}
   - component: {fileID: 1849940842}
   m_Layer: 5
-  m_Name: Level 1 button (1)
+  m_Name: 1
   m_TagString: ItemUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2753,7 +2759,7 @@ GameObject:
   - component: {fileID: 1927921009}
   - component: {fileID: 1927921008}
   m_Layer: 5
-  m_Name: Level 1 button
+  m_Name: 0
   m_TagString: ItemUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

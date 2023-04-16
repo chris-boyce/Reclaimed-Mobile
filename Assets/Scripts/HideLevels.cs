@@ -5,11 +5,10 @@ using UnityEngine;
 public class HideLevels : MonoBehaviour
 {
     public int currentlevel;
-
+    public GameObject[] currentLevelsGameObject;
     void Awake()
     {
         currentlevel = PlayerPrefs.GetInt("SavedPlayerLevel");
-        GameObject[] currentLevelsGameObject = GameObject.FindGameObjectsWithTag("ItemUI");
         for (int i = 0; i < currentLevelsGameObject.Length; i++)
         {
             if (i >= currentlevel)

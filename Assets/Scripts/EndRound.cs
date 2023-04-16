@@ -26,7 +26,7 @@ public class EndRound : MonoBehaviour
             {
                 PlayerPrefs.SetInt("SavedPlayerLevel", LevelNum);
             }
-            
+            PlayerPrefs.SetInt("LastLevelPlayed", LevelNum);
             Debug.Log("Should Have Ended");
             SaveStats.SaveStats();
             LoadScene.OnSceneLoadAdditive();//Loads new scene

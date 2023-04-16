@@ -35,6 +35,7 @@ public class EquipButton : MonoBehaviour
                 GameObject temp = Instantiate(Resources.Load("Button")) as GameObject;
                 temp.transform.parent = Inventory.transform;
                 temp.transform.Find("Image").GetComponent<Image>().sprite = ShopController.ShopItems[i].ItemImage;
+                temp.GetComponent<ButtonUpdate>().EquipedItemID = ShopController.ShopItems[i].ItemID;
                 ItemList.Add(temp);
             }
         }

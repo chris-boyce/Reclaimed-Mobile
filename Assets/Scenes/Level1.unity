@@ -8710,6 +8710,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharcterMaster 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4301781045428238249, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: GunList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d1cf399f5f87d724dbf537625c8fbf5f, type: 2}
+    - target: {fileID: 4301781045428238249, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: GunList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c885b741d9b51d4d8e44a1fadffb1f9, type: 2}
+    - target: {fileID: 4301781045428238250, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: Bullets
+      value: 
+      objectReference: {fileID: 1662328101}
+    - target: {fileID: 4301781045428238250, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: amountToPool
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301781045428238250, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 7160967099665658824, guid: 91646fe4ff4ab47458f3cce0ca531d67, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
@@ -11658,6 +11678,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646735290}
   m_CullTransparentMesh: 1
+--- !u!1 &1662328100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662328102}
+  - component: {fileID: 1662328101}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1662328101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662328100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed65365697779d40979e68e313c3bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 4105688998783939232, guid: 8f0226b0bf896874e839e9e46493a429, type: 3}
+  amountToPool: 40
+  bulletID: 0
+--- !u!4 &1662328102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662328100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.865317, y: 0.18780762, z: -0.20332661}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673640211
 GameObject:
   m_ObjectHideFlags: 0
@@ -11946,6 +12014,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954091946}
   m_CullTransparentMesh: 1
+--- !u!1 &1999410435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999410437}
+  - component: {fileID: 1999410436}
+  m_Layer: 0
+  m_Name: EnemyBulletPool
+  m_TagString: EnemyBulletPool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999410436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999410435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed65365697779d40979e68e313c3bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
+  amountToPool: 50
+  bulletID: 0
+--- !u!4 &1999410437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999410435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.865317, y: 0.18780762, z: -0.20332661}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124279434
 GameObject:
   m_ObjectHideFlags: 0

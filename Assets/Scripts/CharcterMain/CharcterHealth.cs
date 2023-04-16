@@ -33,7 +33,10 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
 
     public void Damage(float DamageTaken)
     {
-        Handheld.Vibrate();
+        if (PlayerPrefs.GetInt("HapticEnable") != 0)
+        {
+            Handheld.Vibrate();
+        }
         health -= DamageTaken;
         Debug.Log("Player Hit");
         HealthBar.UpdateHealthbar(DamageTaken);//UI for Health
@@ -42,8 +45,6 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
             SoundController.PlaySound(CritDamage);
         }
         //Screen Shake 
-        //Flash Red
         SoundController.PlaySound(AudioDamage);
-        //Virabation 
     }
 }
