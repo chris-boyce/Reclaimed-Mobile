@@ -23,9 +23,6 @@ public class CameraController : MonoBehaviour
     }
     private void Update()
     {
-
-        
-       
         RaycastHit2D hitright = Physics2D.Raycast(BoundingBox.position, Vector2.right, 5.5f, layerMask);
         RaycastHit2D hitup = Physics2D.Raycast(BoundingBox.position, Vector2.up, 14f, layerMask);
         RaycastHit2D hitleft = Physics2D.Raycast(BoundingBox.position, Vector2.left, 5.5f, layerMask);

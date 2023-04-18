@@ -45,9 +45,6 @@ public class WeaponUnlockBox : MonoBehaviour
         {
             SecondaryWeaponText.text = CharcterFiringScript.GunList[1].Name.ToString();
         }
-        
-
-
 
         NewWeaponText.text = UnlockedGun.Name.ToString();
         UI.SetActive(true);

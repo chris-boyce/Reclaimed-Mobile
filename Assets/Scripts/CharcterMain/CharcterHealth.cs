@@ -16,7 +16,6 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
         HealthBar = GameObject.FindObjectOfType<HealthBar>();
         HealthBar.MAXHEALTH = health;
     }
-
     private void Update()
     {
         if(health < 0)
@@ -24,7 +23,6 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
             PlayerDeath();
         }
     }
-
     void PlayerDeath()
     {
         //gameObject.SetActive(false);
