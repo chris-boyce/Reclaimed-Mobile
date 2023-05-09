@@ -8710,6 +8710,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharcterMaster 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4301781045402670644, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: m_Size.x
+      value: 18.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301781045402670644, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: m_Size.y
+      value: 11.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301781045402670644, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301781045402670644, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4301781045428238249, guid: e3be9342579386244b5488343ae0b2f9, type: 3}
       propertyPath: GunList.Array.data[0]
       value: 
@@ -11709,8 +11725,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   objectToPool: {fileID: 4105688998783939232, guid: 8f0226b0bf896874e839e9e46493a429, type: 3}
-  amountToPool: 40
+  amountToPool: 25
   bulletID: 0
+  AllBullets: []
+  isEnemy: 0
 --- !u!4 &1662328102
 Transform:
   m_ObjectHideFlags: 0
@@ -12047,6 +12065,8 @@ MonoBehaviour:
   objectToPool: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
   amountToPool: 50
   bulletID: 0
+  AllBullets: []
+  isEnemy: 1
 --- !u!4 &1999410437
 Transform:
   m_ObjectHideFlags: 0

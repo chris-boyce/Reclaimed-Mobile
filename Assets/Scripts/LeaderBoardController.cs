@@ -50,6 +50,7 @@ public class LeaderBoardController : MonoBehaviour
         {
             Name = PlayerPrefs.GetString("PlayerID");
         }
+        
         LootLockerSDKManager.SubmitScore(Name, PlayerPrefs.GetInt("SavedPlayerLevel"), leaderboardID, (response) =>
         {
             if (response.statusCode == 200)
@@ -66,6 +67,14 @@ public class LeaderBoardController : MonoBehaviour
 
     public void RequestLeaderBoard()
     {
+        GameObject[] gameObjectsWithTag = GameObject.FindGameObjectsWithTag("PlayerData");
+
+        foreach (GameObject gameObject in gameObjectsWithTag)
+        {
+            Destroy(gameObject);
+        }
+
+
         int leaderboardKey = 13363;
         int count = 10;
         

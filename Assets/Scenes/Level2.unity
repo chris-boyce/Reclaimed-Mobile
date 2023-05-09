@@ -8893,6 +8893,8 @@ MonoBehaviour:
   objectToPool: {fileID: 5369417800766999826, guid: 6251e5151fbd20746a4dc6ea5b7dfd46, type: 3}
   amountToPool: 50
   bulletID: 0
+  AllBullets: []
+  isEnemy: 1
 --- !u!4 &824036153
 Transform:
   m_ObjectHideFlags: 0
@@ -11721,6 +11723,8 @@ MonoBehaviour:
   objectToPool: {fileID: 8383333538633777144, guid: ce54b597c2bd4c648850c012bf348eed, type: 3}
   amountToPool: 40
   bulletID: 0
+  AllBullets: []
+  isEnemy: 0
 --- !u!4 &1550617058
 Transform:
   m_ObjectHideFlags: 0

@@ -9,16 +9,21 @@ public class BulletPool : MonoBehaviour
     public int amountToPool = 50;
     public int bulletID;
     public GameObject[] AllBullets;
+    public bool isEnemy;
     void Start()
     {
         AllBullets = Resources.LoadAll<GameObject>("Bullets");
-        for (int i = 0; i < AllBullets.Length; i++)
+        if (!isEnemy)
         {
-            if (PlayerPrefs.GetInt("EquipItemID") == i)
+            for (int i = 0; i < AllBullets.Length; i++)
             {
-                objectToPool = AllBullets[i];
+                if (PlayerPrefs.GetInt("EquipItemID") == i)
+                {
+                    objectToPool = AllBullets[i];
+                }
             }
         }
+
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)

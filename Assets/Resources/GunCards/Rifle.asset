@@ -33,4 +33,4 @@ MonoBehaviour:
   Gun: {fileID: 0}
   BI: {fileID: 0}
   Icon: {fileID: 21300000, guid: d04036086a8db32468338a8424df933d, type: 3}
-  TwinShot: 1
+  TwinShot: 0

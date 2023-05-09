@@ -129,7 +129,7 @@ public class TESTFB : MonoBehaviour
 
     public void FacebookSharefeed()
     {
-        FB.ShareLink(new System.Uri("https://chris-boyce.github.io/#"), "Check it out", "Hhaha", new System.Uri("https://chris-boyce.github.io/images/pic03.jpg") );
+        FB.ShareLink(new System.Uri("https://chris-boyce.github.io/#"), "Come Play This Game", "This Really Fun", new System.Uri("https://chris-boyce.github.io/images/pic03.jpg") );
     }
 
     void AuthCallBack(IResult result)

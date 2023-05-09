@@ -97,7 +97,6 @@ public class GunCard : ScriptableObject
             {
                 if (TwinShot == false)
                 {
-                    Debug.Log(RT_Damage.ToString());
                     if (Bullet != null)
                     {
                         BI.Shoot(Bullet, RT_Damage, RT_Range, RT_BulletVelocity, Penetration, BulletMovementType);

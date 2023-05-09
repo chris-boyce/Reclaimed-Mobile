@@ -28,6 +28,11 @@ public class SavePlayerStats : MonoBehaviour
         LevelDictionary.Add(3,9);
         LevelDictionary.Add(4, 10);
         LevelDictionary.Add(5, 25);
+        LevelDictionary.Add(6, 27);
+        LevelDictionary.Add(7,28);
+        LevelDictionary.Add(8, 29);
+        LevelDictionary.Add(9,30);
+
 
         if (PlayerPrefs.GetString("PlayerID") == "")
         {
