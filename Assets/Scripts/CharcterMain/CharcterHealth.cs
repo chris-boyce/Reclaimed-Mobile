@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharcterHealth : MonoBehaviour, IDamageable<float>
 {
+    public LoadScene DeathScene;
     public float MaxHealth = 100;
     public float health = 100;
     private HealthBar HealthBar;
@@ -12,6 +13,7 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
 
     private void Start()
     {
+        DeathScene = GameObject.FindGameObjectWithTag("Death").GetComponent<LoadScene>();
         health = MaxHealth;
         HealthBar = GameObject.FindObjectOfType<HealthBar>();
         HealthBar.MAXHEALTH = health;
@@ -25,8 +27,8 @@ public class CharcterHealth : MonoBehaviour, IDamageable<float>
     }
     void PlayerDeath()
     {
-        //gameObject.SetActive(false);
-        //Todo Activate UI //Create Respawn system
+        DeathScene.OnSceneLoadAdditive();
+        Destroy(this.gameObject);
     }
 
     public void Damage(float DamageTaken)

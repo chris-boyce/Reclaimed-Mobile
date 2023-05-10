@@ -51,7 +51,7 @@ public class SavePlayerStats : MonoBehaviour
         
 
 
-        SavedGold = 30;
+        
         SaveGold();
         DontDestroyOnLoad(this.gameObject);
         
@@ -69,6 +69,7 @@ public class SavePlayerStats : MonoBehaviour
 
     public void SaveGold()
     {
+        SavedGold = 1000;
         PlayerPrefs.SetInt("SavedGold", SavedGold);
     }
 
